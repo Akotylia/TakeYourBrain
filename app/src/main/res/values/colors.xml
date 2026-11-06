@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Фон окна до появления Compose (совпадает с фоном светлой темы) -->
+    <color name="window_background">#FFF6FBF2</color>
+    <!-- Фон заставки с логотипом -->
+    <color name="logo_background">#FF1E2024</color>
+    <!-- Виджет "Огонёк" -->
+    <color name="widget_background">#FFFFFFFF</color>
+    <color name="widget_text">#FF16211A</color>
+    <color name="widget_text_soft">#FF4F5F55</color>
+    <color name="widget_flame">#FF2E6B47</color>
+    <color name="widget_flame_off">#FF8A958E</color>
+</resources>

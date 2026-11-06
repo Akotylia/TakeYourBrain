@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Языки приложения: их видно в системных настройках "Языки приложений" и в наших Настройках.
+     Новый язык = папка values-xx со строками + строчка здесь. -->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="en" />
+    <locale android:name="ru" />
+</locale-config>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Доступ к статистике использования (выдаётся вручную в настройках) -->
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- Уведомления (Android 13+ спрашивает у пользователя) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Автозапуск после включения телефона -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Точные будильники для напоминаний (пользователь разрешает сам; без него — неточные) -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <!-- Какие чужие приложения нам видны: только те, что можно запустить с экрана -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <!-- Домашний экран (лаунчер): нужно знать, когда пользователь ушёл на него -->
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.HOME" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".TakeYourBrainApp"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TakeYourBrain">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.TakeYourBrain.Main"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Экран блокировки: отдельная "задача", не виден в списке недавних приложений -->
+        <activity
+            android:name=".block.BlockActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.takeyourbrain.app.block"
+            android:theme="@style/Theme.TakeYourBrain" />
+
+        <!-- Включение телефона и обновление приложения: снова запускаем защиту -->
+        <!-- Виджет "Огонёк" -->
+        <receiver
+            android:name=".widget.StreakWidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_streak_info" />
+        </receiver>
+        <receiver
+            android:name=".service.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <!-- Сменили время или часовой пояс, выдали точные будильники — переставляем напоминания -->
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Напоминания о задачах: будильник и кнопки в уведомлении -->
+        <receiver
+            android:name=".tasks.TaskAlarmReceiver"
+            android:exported="false" />
+        <receiver
+            android:name=".tasks.TaskActionReceiver"
+            android:exported="false" />
+
+        <!-- Будильник на конец режима фокуса -->
+        <receiver
+            android:name=".focus.FocusEndReceiver"
+            android:exported="false" />
+
+        <!-- Будильник на снятие полной блокировки (через 10 минут ожидания) -->
+        <receiver
+            android:name=".service.UnblockReceiver"
+            android:exported="false" />
+
+        <!-- Служба специальных возможностей: узнаёт, какое приложение открыто, и блокирует -->
+        <service
+            android:name=".service.BlockerAccessibilityService"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+    </application>
+
+</manifest>

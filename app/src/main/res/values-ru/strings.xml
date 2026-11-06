@@ -1,0 +1,497 @@
+<resources>
+    <!-- Нижняя навигация -->
+    <string name="nav_apps">Приложения</string>
+    <string name="nav_focus">Фокус</string>
+    <string name="nav_stats">Статистика</string>
+    <string name="nav_settings">Настройки</string>
+
+    <!-- Общие -->
+    <string name="back">Назад</string>
+
+    <!-- Длительности -->
+    <string name="duration_less_than_minute">меньше 1 мин</string>
+    <string name="duration_minutes">%1$d мин</string>
+    <string name="duration_hours">%1$d ч</string>
+    <string name="duration_hours_minutes">%1$d ч %2$d мин</string>
+
+    <!-- Список приложений -->
+    <string name="apps_search_hint">Поиск приложений</string>
+    <string name="apps_clear_search">Очистить поиск</string>
+    <string name="apps_nothing_found">Ничего не найдено</string>
+    <string name="apps_not_used_today">Сегодня не открывалось</string>
+    <string name="apps_today_usage">Сегодня: %1$s</string>
+    <string name="apps_no_usage_access">Нет доступа к статистике использования, поэтому время не считается.</string>
+    <string name="apps_grant_access">Выдать доступ</string>
+    <string name="apps_accessibility_off">Блокировка не работает: выключена служба специальных возможностей.</string>
+    <string name="apps_turn_on">Включить</string>
+    <string name="apps_section_blocked">Заблокированные</string>
+    <string name="apps_section_all">Все приложения</string>
+    <string name="sort_button">Сортировка</string>
+    <string name="sort_by_usage">По времени за сегодня</string>
+    <string name="sort_by_name">По названию</string>
+    <string name="sort_by_install_date">По дате установки (новые сверху)</string>
+
+    <!-- Помощник по разрешениям -->
+    <string name="permissions_title">Разрешения</string>
+    <string name="permissions_intro">Чтобы считать экранное время и блокировать приложения, Take Your Brain нужны несколько разрешений. Нажмите кнопку, включите разрешение и вернитесь сюда: статус обновится сам.</string>
+    <string name="permissions_progress">Выдано: %1$d из %2$d</string>
+    <string name="permissions_continue">Продолжить</string>
+    <string name="permissions_not_all_required">Не все обязательные разрешения выданы. Можно продолжить, но приложение будет работать не полностью. Вернуться сюда можно из Настроек.</string>
+    <string name="permission_status_granted">Выдано</string>
+    <string name="permission_status_not_granted">Не выдано</string>
+    <string name="permission_required">Обязательно</string>
+    <string name="permission_recommended">Рекомендуется</string>
+    <string name="permission_open_settings">Открыть настройки</string>
+    <string name="permission_allow">Разрешить</string>
+    <string name="permission_app_info">Сведения о приложении</string>
+
+    <string name="perm_usage_title">Доступ к статистике использования</string>
+    <string name="perm_usage_desc">Нужен, чтобы считать, сколько времени вы проводите в каждом приложении. Найдите в списке Take Your Brain и включите переключатель.</string>
+    <string name="perm_accessibility_title">Служба специальных возможностей</string>
+    <string name="perm_accessibility_desc">Нужна, чтобы видеть, какое приложение открыто, и закрывать заблокированные. Откройте «Установленные приложения» → Take Your Brain и включите. Если переключатель серый: «Сведения о приложении» → ⋮ (справа вверху) → «Разрешить ограниченные настройки», затем попробуйте снова.</string>
+    <string name="perm_notifications_title">Уведомления</string>
+    <string name="perm_notifications_desc">Предупреждения незадолго до конца лимита, напоминания о задачах и конец фокуса.</string>
+    <string name="perm_battery_title">Без ограничений батареи</string>
+    <string name="perm_battery_desc">Чтобы телефон не останавливал защиту в фоне ради экономии заряда. Найдите в списке Take Your Brain и выберите «Без ограничений» (на некоторых телефонах — «Не оптимизировать»).</string>
+
+    <!-- Настройки -->
+    <string name="settings_permissions">Разрешения</string>
+    <string name="settings_permissions_summary">Проверить, какие разрешения выданы</string>
+
+    <!-- Правило блокировки -->
+    <string name="rule_any_condition">Приложение блокируется, если выполнено любое из включённых условий.</string>
+    <string name="rule_full_block">Полная блокировка</string>
+    <string name="rule_full_block_desc">Приложение заблокировано всегда</string>
+    <string name="rule_limit">Дневной лимит</string>
+    <string name="rule_limit_desc">Блокировать, когда за день потрачено столько времени. Сбрасывается в полночь.</string>
+    <string name="rule_used_today">Сегодня использовано: %1$s</string>
+    <string name="rule_schedule">Расписание</string>
+    <string name="schedule_none">Без расписания</string>
+    <string name="schedule_allow_only">Разрешено только в эти периоды</string>
+    <string name="schedule_block_during">Заблокировано в эти периоды</string>
+    <string name="schedule_hint">Период может переходить через полночь, например 23:00–07:00. Дни недели — это дни, в которые период начинается.</string>
+    <string name="interval_next_day">до следующего дня</string>
+    <string name="interval_start">Начало</string>
+    <string name="interval_end">Конец</string>
+    <string name="interval_add">Добавить период</string>
+    <string name="interval_delete">Удалить период</string>
+    <string name="rule_save">Сохранить</string>
+    <string name="rule_delete">Удалить правило</string>
+    <string name="rule_delete_confirm">Удалить правило для %1$s?</string>
+    <string name="error_no_condition">Включите хотя бы одно условие: полную блокировку, лимит или расписание.</string>
+    <string name="error_limit_range">Лимит должен быть от 1 до 1440 минут.</string>
+    <string name="error_no_intervals">Добавьте в расписание хотя бы один период.</string>
+    <string name="error_no_days">Выберите хотя бы один день для каждого периода.</string>
+    <string name="error_same_time">Начало и конец периода должны отличаться.</string>
+    <string name="dialog_ok">ОК</string>
+    <string name="dialog_cancel">Отмена</string>
+
+    <!-- Краткое описание правила в списке приложений -->
+    <string name="summary_full_block">Полная блокировка</string>
+    <string name="summary_limit">Лимит %1$s</string>
+    <string name="summary_allow_only">Разрешено по расписанию</string>
+    <string name="summary_block_during">Блокировка по расписанию</string>
+
+    <!-- Экран блокировки -->
+    <string name="block_reason_full">Включена полная блокировка</string>
+    <string name="block_reason_limit">Лимит %1$s исчерпан</string>
+    <string name="block_reason_allow_today">Доступно с %1$s до %2$s</string>
+    <string name="block_reason_allow_day">Доступно: %1$s, с %2$s до %3$s</string>
+    <string name="block_reason_allow_none">Недоступно по расписанию</string>
+    <string name="block_reason_blocked_until">Заблокировано по расписанию до %1$s</string>
+    <string name="block_reason_blocked_until_day">Заблокировано по расписанию до %1$s, %2$s</string>
+    <string name="block_remaining">До разблокировки: %1$s</string>
+    <string name="block_no_unlock_time">Само не разблокируется, только если изменить правило</string>
+    <string name="block_time_over">Блокировка закончилась, приложение можно открыть</string>
+    <string name="block_calm_message">Сделайте вдох. Это хороший момент, чтобы отдохнуть от экрана.</string>
+    <string name="block_go_home">На главный экран</string>
+
+    <!-- Уведомления -->
+    <string name="channel_warnings">Предупреждения</string>
+    <string name="channel_warnings_desc">Напоминания незадолго до блокировки приложения</string>
+    <string name="warning_limit_title">%1$s: осталось %2$s</string>
+    <string name="warning_limit_text">Потом приложение заблокируется до полуночи.</string>
+    <string name="warning_allowed_title">%1$s: доступно до %2$s</string>
+    <string name="warning_allowed_text">Разрешённое время скоро закончится.</string>
+    <string name="warning_blocked_title">%1$s: блокировка с %2$s</string>
+    <string name="warning_blocked_text">Скоро начнётся блокировка по расписанию.</string>
+
+    <!-- Настройки: защита и батарея -->
+    <string name="settings_section_protection">Защита</string>
+    <string name="settings_warning_time">Предупреждать до блокировки</string>
+    <string name="settings_warning_minutes">За %1$d мин</string>
+    <string name="settings_section_battery">Батарея на Samsung</string>
+    <string name="settings_battery_intro">Samsung усыпляет приложения в фоне. Чтобы защита работала всегда, один раз сделайте два шага:</string>
+    <string name="settings_battery_step1">1. Разрешите работу без ограничений батареи.</string>
+    <string name="settings_battery_step2">2. Батарея → Ограничения в фоновом режиме → Не уходят в сон автоматически → + → Take Your Brain.</string>
+    <string name="settings_open_battery">Открыть настройки батареи</string>
+
+    <!-- PIN-код -->
+    <string name="pin_change_title">Смена PIN-кода</string>
+    <string name="pin_enter_to_edit">Введите PIN, чтобы изменить правило</string>
+    <string name="pin_enter_to_unlock">Введите PIN, чтобы разблокировать</string>
+    <string name="pin_enter_to_change_setting">Введите PIN, чтобы изменить настройку</string>
+    <string name="pin_enter_current">Введите текущий PIN</string>
+    <string name="pin_wrong">Неверный PIN. Осталось попыток: %1$d</string>
+    <string name="pin_locked">Слишком много попыток. Повторите через %1$d с</string>
+
+    <!-- Разблокировка с экрана блокировки -->
+    <string name="block_unlock">Разблокировать</string>
+    <string name="block_passes_left">Пропусков на сегодня: %1$d</string>
+    <string name="block_no_passes">Пропуски на сегодня закончились</string>
+    <string name="block_wait_text">Используйте эту паузу, чтобы спросить себя: это правда нужно прямо сейчас?</string>
+    <string name="block_wait_cancel">Не буду открывать</string>
+    <string name="block_open_for">Открыть на %1$d мин</string>
+
+    <!-- Режим фокуса -->
+    <string name="focus_intro">Выберите приложения и время. Пока идёт фокус, они заблокированы полностью, пропуски не действуют. Завершить досрочно можно только через PIN.</string>
+    <string name="focus_duration">Длительность</string>
+    <string name="focus_until_pick">До…</string>
+    <string name="focus_until">До %1$s</string>
+    <string name="focus_until_tomorrow">До завтра, %1$s</string>
+    <string name="focus_start_until_tomorrow">Начать фокус до завтра, %1$s</string>
+    <string name="focus_apps_selected">Приложения · выбрано: %1$d</string>
+    <string name="focus_select_with_rules">С правилами</string>
+    <string name="focus_clear">Сбросить</string>
+    <string name="focus_has_rule">Есть правило</string>
+    <string name="focus_choose_app_hint">Выберите хотя бы одно приложение</string>
+    <string name="focus_start">Начать фокус</string>
+    <string name="focus_start_for">Начать фокус · %1$s</string>
+    <string name="focus_start_until">Начать фокус до %1$s</string>
+    <string name="focus_active_title">Идёт фокус</string>
+    <string name="focus_apps_blocked">Заблокировано приложений: %1$d</string>
+    <string name="focus_stop">Завершить досрочно</string>
+    <string name="pin_enter_to_stop_focus">Введите PIN, чтобы завершить фокус досрочно</string>
+    <string name="block_reason_focus">Включён режим фокуса</string>
+    <string name="channel_focus">Фокус</string>
+    <string name="channel_focus_desc">Обратный отсчёт, пока идёт режим фокуса</string>
+    <string name="focus_notif_title">Фокус до %1$s</string>
+    <string name="focus_finished_title">Фокус завершён</string>
+    <string name="focus_finished_text">Отлично! Приложения снова доступны.</string>
+
+    <!-- Неблокируемые приложения -->
+    <string name="apps_protected">Системное, нельзя заблокировать</string>
+    <string name="apps_protected_toast">Это приложение нельзя заблокировать: оно нужно для звонков, экстренных вызовов или настроек.</string>
+
+    <!-- Настройки: язык -->
+    <string name="settings_language">Язык</string>
+    <string name="language_system">Как в телефоне</string>
+
+    <!-- Настройки: PIN и пропуски -->
+    <string name="settings_passes">Пропусков в день</string>
+    <string name="settings_passes_desc">Разовые разблокировки на %1$d мин с экрана блокировки, на все приложения вместе</string>
+    <string name="settings_change_pin">Сменить PIN-код</string>
+    <string name="settings_change_pin_desc">Нужен, чтобы менять правила и разблокировать приложения</string>
+
+    <!-- Служба специальных возможностей (видно в системных настройках) -->
+    <string name="accessibility_service_description">Определяет, какое приложение открыто, чтобы применять ваши правила экранного времени. Данные не покидают телефон.</string>
+    <!-- Статистика -->
+    <string name="stats_mode_day">День</string>
+    <string name="stats_mode_week">7 дней</string>
+    <string name="stats_today">Сегодня</string>
+    <string name="stats_yesterday">Вчера</string>
+    <string name="stats_last_7_days">Последние 7 дней</string>
+    <string name="stats_screen_time">Время в приложениях</string>
+    <string name="stats_blocks">Блокировок</string>
+    <string name="stats_daily_average">В среднем %1$s в день</string>
+    <string name="stats_by_day">Время по дням</string>
+    <string name="stats_chart_hint">Нажмите на столбик, чтобы посмотреть этот день.</string>
+    <string name="stats_chart_item">%1$s: %2$s</string>
+    <string name="stats_top_apps">Чаще всего</string>
+    <string name="stats_no_data">Пока нет данных о времени.</string>
+    <!-- Правила v2 и банк времени -->
+    <string name="rule_full_block_note">Снять полную блокировку можно только через 10 минут ожидания. Пропуски и банк времени на неё не действуют.</string>
+    <string name="rule_full_block_will_wait">После сохранения полная блокировка снимется через 10 минут. Пропустить ожидание нельзя.</string>
+    <string name="rule_unblock_pending">Полная блокировка снимется в %1$s</string>
+    <string name="rule_unblock_cancel">Не снимать</string>
+    <string name="rule_full_block_confirm_title">Включить полную блокировку?</string>
+    <string name="rule_full_block_confirm_text">Приложение будет закрыто всегда. Пропуски и банк времени на него не действуют.\n\nСнять полную блокировку можно будет только через 10 минут ожидания — пропустить ожидание нельзя.</string>
+    <string name="rule_full_block_confirm_ok">Включить</string>
+    <string name="rule_delete_confirm_full">Удалить правило для %1$s? Полная блокировка снимется только через 10 минут, после этого правило удалится.</string>
+    <string name="rule_limit_weekdays">Будни</string>
+    <string name="rule_limit_weekend">Выходные</string>
+    <string name="rule_limit_empty_hint">Будни — пн–пт, выходные — сб–вс. «Без лимита» — в эти дни время не ограничено.</string>
+    <string name="rule_limit_split">Разный лимит в будни и выходные</string>
+    <string name="rule_bank_balance">В банке: %1$s</string>
+    <string name="rule_bank_hint">Неиспользованные минуты лимита каждый день копятся в банк. Потратить их можно на экране блокировки в дни трат (Настройки → Банк времени).</string>
+    <string name="error_limit_split_empty">Укажите лимит хотя бы для будней или для выходных.</string>
+    <string name="summary_full_block_until">Полная блокировка до %1$s</string>
+    <string name="summary_limit_split">Лимит %1$s, вых. %2$s</string>
+    <string name="summary_limit_weekdays">Лимит в будни %1$s</string>
+    <string name="summary_limit_weekend">Лимит в выходные %1$s</string>
+    <string name="bank_balance">В банке: %1$s</string>
+    <string name="bank_spend_only_on">Тратить банк можно в: %1$s.</string>
+    <plurals name="bank_price">
+        <item quantity="one">Сейчас 1 минута стоит %1$d минуту банка.</item>
+        <item quantity="few">Сейчас 1 минута стоит %1$d минуты банка.</item>
+        <item quantity="many">Сейчас 1 минута стоит %1$d минут банка.</item>
+        <item quantity="other">Сейчас 1 минута стоит %1$d минуты банка.</item>
+    </plurals>
+    <string name="bank_not_enough">Минут в банке пока не хватает.</string>
+    <string name="bank_take">Взять %1$d мин из банка</string>
+    <string name="bank_take_priced">%1$d мин (спишется %2$d)</string>
+    <string name="bank_refund_hint">Если выйдете из приложения раньше, неиспользованные минуты вернутся в банк.</string>
+    <string name="unblocked_title">%1$s: полная блокировка снята</string>
+    <string name="unblocked_text">Ожидание 10 минут закончилось.</string>
+    <string name="settings_section_bank">Банк времени</string>
+    <string name="settings_bank_cap">Потолок банка для приложения</string>
+    <string name="settings_bank_spend_days">Дни для трат</string>
+    <string name="settings_bank_weekly_reset">Сгорает в ночь на понедельник</string>
+    <string name="settings_bank_weekly_reset_desc">Иначе минуты копятся дальше, но не больше потолка</string>
+    <string name="settings_bank_buy_blocked">Выкупать запрещённые периоды</string>
+    <plurals name="settings_bank_buy_blocked_desc">
+        <item quantity="one">Время внутри периода «заблокировано» дороже: 1 минута = %1$d минута банка</item>
+        <item quantity="few">Время внутри периода «заблокировано» дороже: 1 минута = %1$d минуты банка</item>
+        <item quantity="many">Время внутри периода «заблокировано» дороже: 1 минута = %1$d минут банка</item>
+        <item quantity="other">Время внутри периода «заблокировано» дороже: 1 минута = %1$d минуты банка</item>
+    </plurals>
+    <string name="dialog_save">Сохранить</string>
+    <string name="days_none">ни в какие дни</string>
+    <string name="bank_title">Банк времени</string>
+    <string name="bank_how_title">Как это работает</string>
+    <string name="bank_how_text">Если за день вы не израсходовали лимит приложения, остаток на следующий день попадает в банк этого приложения (не больше %1$s). Потратить минуты можно на экране блокировки в дни: %2$s. На полную блокировку и режим фокуса банк не действует. Вне периода «разрешено только» цена ×%3$d.</string>
+    <string name="bank_accounts">Накоплено</string>
+    <string name="bank_no_accounts">Пока нет приложений с лимитом.</string>
+    <string name="bank_history">История</string>
+    <string name="bank_no_history">Операций пока нет. Первые минуты появятся завтра.</string>
+    <string name="bank_tx_earn">сэкономлено за %1$s</string>
+    <string name="block_full_how_to_remove">Снять её можно в правиле — после 10 минут ожидания</string>
+    <string name="bank_tx_spend">взято</string>
+    <string name="bank_tx_refund">возврат остатка</string>
+    <string name="bank_tx_expire">сгорело</string>
+    <!-- Дела и напоминания -->
+    <string name="nav_todo">Дела</string>
+    <string name="apps_open_stats">Открыть статистику</string>
+    <string name="perm_exact_alarms_title">Точные напоминания</string>
+    <string name="perm_exact_alarms_desc">Чтобы напоминания, конец фокуса и снятие полной блокировки приходили минута в минуту. Без этого Android может задержать их на несколько минут.</string>
+    <string name="channel_reminders">Напоминания</string>
+    <string name="channel_reminders_desc">Напоминания о ваших задачах</string>
+    <string name="task_notification_text">Пора сделать</string>
+    <string name="task_action_done">Готово</string>
+    <string name="task_action_snooze_10">+10 мин</string>
+    <string name="task_action_snooze_60">+1 ч</string>
+    <string name="todo_tasks">Задачи</string>
+    <string name="todo_tasks_empty">Нет задач</string>
+    <plurals name="todo_tasks_count">
+        <item quantity="one">%d задача</item>
+        <item quantity="few">%d задачи</item>
+        <item quantity="many">%d задач</item>
+        <item quantity="other">%d задачи</item>
+    </plurals>
+    <string name="todo_next">Ближайшее: %1$s</string>
+    <string name="todo_shopping">Покупки</string>
+    <string name="when_today">сегодня, %1$s</string>
+    <string name="when_tomorrow">завтра, %1$s</string>
+    <string name="when_day">%1$s, %2$s</string>
+    <string name="rule_text_interval">каждые %1$s</string>
+    <string name="rule_text_interval_from_done">через %1$s после выполнения</string>
+    <string name="rule_text_daily">каждый день в %1$s</string>
+    <string name="rule_text_weekly">по %1$s в %2$s</string>
+    <string name="rule_text_monthly">ежемесячно: %1$d-е число, %2$s</string>
+    <string name="task_done_at">Выполнено %1$s</string>
+    <string name="task_snoozed_until">Отложено до %1$s</string>
+    <string name="task_fired">Напомнил %1$s</string>
+    <string name="task_next">следующее %1$s</string>
+    <string name="tasks_exact_alarms_off">Напоминания могут опаздывать на несколько минут: не разрешены точные будильники.</string>
+    <string name="tasks_empty">Задач пока нет. Нажмите «Новая задача».</string>
+    <string name="task_new">Новая задача</string>
+    <string name="task_edit_title">Задача</string>
+    <string name="task_marked_next">Отмечено. Следующее напоминание: %1$s</string>
+    <string name="tasks_done_section">Выполнено · %1$d</string>
+    <string name="tasks_clear_done">Очистить</string>
+    <string name="task_title">Что сделать</string>
+    <string name="task_note">Заметка (необязательно)</string>
+    <string name="task_reminder">Напоминание</string>
+    <string name="task_delete">Удалить задачу</string>
+    <string name="task_delete_confirm">Удалить задачу?</string>
+    <string name="reminder_none">Без напоминания</string>
+    <string name="reminder_once">Один раз</string>
+    <string name="reminder_after">Через…</string>
+    <string name="reminder_interval">Каждые N часов</string>
+    <string name="reminder_weekly">По дням недели</string>
+    <string name="reminder_monthly">Раз в месяц</string>
+    <string name="reminder_none_hint">Задача просто будет в списке.</string>
+    <string name="reminder_interval_hours">Интервал, часов</string>
+    <string name="reminder_first_time">Первый раз</string>
+    <string name="reminder_from_start">По расписанию от первого раза</string>
+    <string name="reminder_from_done">От момента, когда отмечу «Готово»</string>
+    <string name="reminder_month_day">Число месяца</string>
+    <string name="reminder_month_hint">Если в месяце нет такого числа (например, 31-го), напомню в последний день месяца.</string>
+    <string name="task_error_title">Напишите, что нужно сделать.</string>
+    <string name="task_error_past">Это время уже прошло.</string>
+    <string name="task_error_interval">Интервал — от 1 до 168 часов.</string>
+    <string name="task_error_days">Выберите хотя бы один день.</string>
+    <string name="task_error_month_day">Число месяца — от 1 до 31.</string>
+    <string name="settings_section_reminders">Напоминания</string>
+    <string name="settings_quiet_hours">Тихие часы</string>
+    <string name="settings_quiet_hours_desc">Напоминания, выпавшие на это время, придут, когда тихие часы закончатся</string>
+    <string name="settings_quiet_from">с</string>
+    <string name="settings_quiet_to">до</string>
+    <string name="settings_exact_alarms">Точные напоминания</string>
+    <string name="settings_exact_alarms_on">Разрешены: приходят минута в минуту</string>
+    <string name="settings_exact_alarms_off">Не разрешены: могут опаздывать на несколько минут. Нажмите, чтобы разрешить</string>
+    <!-- Выбор лимита, вид напоминания, список покупок -->
+    <string name="limit_none">Без лимита</string>
+    <string name="limit_none_short">без лимита</string>
+    <string name="limit_custom">Своё</string>
+    <string name="limit_custom_label">Своё значение</string>
+    <string name="limit_minutes_suffix">мин</string>
+    <string name="reminder_choose_title">Когда напомнить?</string>
+    <string name="reminder_none_desc">Задача просто будет в списке</string>
+    <string name="reminder_once_desc">В выбранный день и время</string>
+    <string name="reminder_after_desc">Через 10 минут, час, пару часов</string>
+    <string name="reminder_interval_desc">Например, пить воду каждые 2 часа</string>
+    <string name="reminder_weekly_desc">Например, по субботам в 21:00</string>
+    <string name="reminder_monthly_desc">Например, 1-го числа в 9:00</string>
+    <string name="todo_shopping_empty">Всё куплено</string>
+    <plurals name="todo_shopping_count">
+        <item quantity="one">Купить: %d</item>
+        <item quantity="few">Купить: %d</item>
+        <item quantity="many">Купить: %d</item>
+        <item quantity="other">Купить: %d</item>
+    </plurals>
+    <string name="shopping_default_list">Продукты</string>
+    <string name="shopping_undo">Отменить</string>
+    <string name="shopping_deleted">Удалено: %1$s</string>
+    <string name="shopping_cleared">Убрано купленных: %1$d</string>
+    <string name="shopping_share">Поделиться списком</string>
+    <string name="shopping_menu">Действия со списком</string>
+    <string name="shopping_list_new">Новый список</string>
+    <string name="shopping_list_new_short">Список</string>
+    <string name="shopping_list_rename">Переименовать список</string>
+    <string name="shopping_list_delete">Удалить список</string>
+    <string name="shopping_list_delete_confirm">Удалить список «%1$s» вместе со всем, что в нём?</string>
+    <string name="shopping_list_name">Название</string>
+    <string name="shopping_empty">Список пуст. Напишите внизу, что купить, и нажмите Enter. Нажмите на покупку — куплено, удерживайте — изменить, смахните влево — удалить.</string>
+    <string name="shopping_bought_section">Куплено · %1$d</string>
+    <string name="shopping_clear_bought">Убрать купленные</string>
+    <string name="shopping_add_hint">Добавить покупку…</string>
+    <string name="shopping_add">Добавить</string>
+    <string name="shopping_item_edit">Покупка</string>
+    <string name="shopping_item_name">Что купить</string>
+    <string name="shopping_item_quantity">Количество</string>
+    <string name="shopping_item_quantity_hint">2 л, 3 шт</string>
+    <string name="shopping_item_delete">Удалить</string>
+    <!-- Этап 11: профиль, серия, итоги недели, задачи на экране блокировки, фокус на задаче -->
+    <string name="nav_profile">Профиль</string>
+    <string name="profile_bank_desc">Накоплено: %1$s</string>
+    <string name="profile_stats_desc">Сегодня, 7 дней, итоги недели</string>
+    <string name="profile_settings_desc">PIN, пропуски, напоминания, язык</string>
+    <string name="streak_title">Серия без превышений</string>
+    <plurals name="streak_days">
+        <item quantity="one">%d день</item>
+        <item quantity="few">%d дня</item>
+        <item quantity="many">%d дней</item>
+        <item quantity="other">%d дня</item>
+    </plurals>
+    <plurals name="streak_best">
+        <item quantity="one">Рекорд: %d день</item>
+        <item quantity="few">Рекорд: %d дня</item>
+        <item quantity="many">Рекорд: %d дней</item>
+        <item quantity="other">Рекорд: %d дня</item>
+    </plurals>
+    <string name="streak_today_clean">Сегодня пока всё по правилам — огонёк горит</string>
+    <string name="streak_today_broken">Сегодня лимит превышен или взят пропуск — серия начнётся заново завтра</string>
+    <string name="streak_today_neutral">Добавьте правило для приложения — и огонёк загорится</string>
+    <string name="stats_week_results">Итоги недели</string>
+    <string name="stats_streak_hint">Подряд без превышения лимитов и без пропусков</string>
+    <string name="stats_saved">Осталось от лимитов</string>
+    <string name="stats_bank_earned">Пришло в банк</string>
+    <string name="stats_bank_spent">Потрачено из банка</string>
+    <plurals name="block_tasks_title">
+        <item quantity="one">Вместо этого — %d задача</item>
+        <item quantity="few">Вместо этого — %d задачи</item>
+        <item quantity="many">Вместо этого — %d задач</item>
+        <item quantity="other">Вместо этого — %d задачи</item>
+    </plurals>
+    <string name="block_open_tasks">Открыть задачи</string>
+    <string name="focus_on_task">Задача: %1$s</string>
+    <string name="focus_task_banner">Фокус на задаче</string>
+    <string name="focus_task_done">Задача выполнена</string>
+    <string name="task_focus">Фокус на этой задаче</string>
+    <!-- Этап 12: части приложений (YouTube Shorts), отладочный дамп -->
+    <string name="rule_elements">Внутри приложения</string>
+    <string name="element_youtube_shorts">Блокировать Shorts</string>
+    <string name="element_youtube_shorts_desc">Когда открываются Shorts, YouTube сразу возвращается назад. Остальной YouTube работает как обычно.</string>
+    <string name="element_blocked_toast">Shorts заблокированы</string>
+    <string name="summary_shorts">Shorts заблокированы</string>
+    <string name="settings_section_dev">Для разработчика</string>
+    <string name="settings_debug_dump">Дамп экрана в Logcat</string>
+    <string name="settings_debug_dump_desc">Записывает дерево элементов открытого экрана (тег TYB_DUMP). Только в отладочной сборке.</string>
+    <string name="element_always">Всегда</string>
+    <string name="element_after_limit">После лимита</string>
+    <string name="element_used_today">Сегодня смотрели: %1$s</string>
+    <string name="element_limit_toast">Лимит Shorts на сегодня исчерпан</string>
+    <string name="summary_shorts_limit">Shorts %1$s в день</string>
+    <string name="reminder_after_custom">Через сколько</string>
+    <string name="reminder_unit_minutes">мин</string>
+    <string name="reminder_unit_hours">ч</string>
+    <string name="task_error_after">Укажите, через сколько напомнить: от 1 минуты до 7 дней.</string>
+    <!-- Этап 13: оформление -->
+    <string name="settings_section_appearance">Внешний вид</string>
+    <string name="settings_theme">Тема</string>
+    <string name="theme_system">Как в телефоне</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Тёмная</string>
+    <string name="settings_glass">Стеклянный стиль</string>
+    <string name="settings_glass_desc">Панель размывает то, что под ней, карточки полупрозрачные. На слабых телефонах может подтормаживать</string>
+    <string name="settings_haptics">Вибрация</string>
+    <string name="settings_haptics_desc">Лёгкий отклик при переключении вкладок, на цифрах PIN и переключателях</string>
+    <string name="pin_hello">Здравствуйте</string>
+    <string name="pin_hello_name">Здравствуйте, %1$s</string>
+    <string name="pin_create_title">Придумайте PIN-код</string>
+    <string name="pin_repeat_title">Повторите PIN-код</string>
+    <string name="pin_enter_title">Введите PIN-код</string>
+    <string name="pin_setup_hint">4 цифры. Он понадобится, чтобы менять правила и разблокировать приложения.</string>
+    <string name="pin_mismatch">Коды не совпадают. Попробуйте ещё раз</string>
+    <string name="pin_created">PIN-код создан</string>
+    <string name="pin_back">Назад</string>
+    <string name="pin_done">Готово</string>
+    <string name="pin_backspace">Стереть</string>
+    <string name="pin_forgot">Забыли PIN?</string>
+    <string name="pin_forgot_text">Сбросить PIN можно только удалив приложение — вместе со всеми правилами. Так задумано: иначе защиту было бы слишком легко обойти. Хранится только «отпечаток» PIN, поэтому даже мы его не видим.</string>
+    <string name="settings_section_main">Основное</string>
+    <string name="settings_name">Как к вам обращаться</string>
+    <string name="settings_name_desc">Для приветствия «Здравствуйте, …»</string>
+    <string name="settings_name_empty">не указано</string>
+    <string name="settings_name_hint">Имя</string>
+    <string name="settings_permissions_missing">Нет важного разрешения — блокировка не работает.</string>
+    <string name="settings_more">Дополнительно</string>
+    <string name="settings_more_desc">Разрешения, помощник, версия приложения</string>
+    <string name="settings_version">Версия приложения</string>
+    <string name="settings_battery_ok">Работа в фоне разрешена</string>
+    <string name="settings_battery_ok_desc">Нажмите, чтобы проверить «Без ограничений» в настройках батареи Samsung</string>
+    <string name="bank_total_of_cap">накоплено, полный мозг — %1$s</string>
+    <string name="block_wait_title_short">Сделайте паузу</string>
+    <string name="intro_skip">Пропустить</string>
+    <string name="settings_replay_intro">Показать заставку</string>
+    <string name="settings_preview_streak">Проверка: праздник серии</string>
+    <string name="settings_preview_focus">Проверка: фокус завершён</string>
+    <string name="streak_celebrate_text">Столько дней подряд без превышения лимитов. Так держать!</string>
+    <string name="streak_celebrate_ok">Отлично</string>
+    <string name="widget_streak_desc">Ваша серия: сколько дней подряд без превышения лимитов</string>
+    <string name="widget_streak_preview">7 дней</string>
+    <string name="settings_add_widget">Добавить виджет «Огонёк»</string>
+    <string name="settings_add_widget_desc">Серия без превышений прямо на экране телефона</string>
+    <string name="settings_replay_tour">Показать знакомство</string>
+    <string name="settings_replay_tour_desc">Короткие карточки о том, что где находится</string>
+    <string name="tour_next">Дальше</string>
+    <string name="tour_done">Начать</string>
+    <string name="tour_tabs_title">Четыре вкладки</string>
+    <string name="tour_tabs_text">Приложения: правила и время за сегодня. Фокус: заблокировать приложения на время. Дела: задачи и покупки. Профиль: огонёк, банк, статистика и настройки.</string>
+    <string name="tour_rule_title">Правила</string>
+    <string name="tour_rule_text">Нажмите на приложение в списке и выберите лимит на день, расписание или полную блокировку. Когда время выйдет, приложение закроется. Изменить правило можно только с PIN.</string>
+    <string name="tour_focus_title">Фокус</string>
+    <string name="tour_focus_text">Выберите приложения и время. Они полностью заблокированы, пока идёт фокус, а завершить его раньше можно только с PIN.</string>
+    <string name="tour_bank_title">Банк времени</string>
+    <string name="tour_bank_text">Минуты лимита, которые вы не потратили, копятся в банке. В дни трат, обычно в выходные, их можно использовать на экране блокировки.</string>
+    <string name="tour_flame_title">Огонёк</string>
+    <string name="tour_flame_text">Горит, пока вы не превышаете лимиты. Серия видна в Профиле, а виджет с огоньком можно добавить на экран телефона.</string>
+    <string name="disclosure_title">Зачем нужна служба специальных возможностей</string>
+    <string name="disclosure_text">Take Your Brain использует службу специальных возможностей (Accessibility API), чтобы блокировать приложения по вашим правилам.\n\nЧто служба видит:\n• какое приложение сейчас открыто (его имя пакета);\n• внутренние идентификаторы элементов экрана в приложениях, где вы заблокировали часть, например плеер Shorts в YouTube.\n\nЧто служба делает:\n• считает время, пока приложение открыто;\n• закрывает заблокированное приложение и показывает экран блокировки.\n\nЭти данные остаются только на вашем телефоне. Приложение никому их не отправляет и не передаёт: у него нет доступа к интернету. Тексты, сообщения и пароли служба не читает и не сохраняет.\n\nБез службы блокировка работать не будет. Выключить её можно в любой момент в настройках телефона.</string>
+    <string name="disclosure_accept">Согласен, открыть настройки</string>
+    <string name="disclosure_decline">Не сейчас</string>
+    <string name="privacy_title">Политика конфиденциальности</string>
+    <string name="privacy_text">Дата: 30 октября 2026 г.\n\nTake Your Brain помогает ограничивать время в приложениях. Все данные хранятся только на вашем телефоне. У приложения нет доступа к интернету: оно ничего не отправляет ни нам, ни кому-либо ещё. Нет рекламы, аналитики, учётных записей и резервных копий в облаке.\n\nСлужба специальных возможностей (Accessibility API). Нужна, чтобы блокировать приложения по вашим правилам. Служба узнаёт, какое приложение открыто (имя пакета), и внутренние идентификаторы элементов экрана в приложениях, где вы заблокировали часть, например плеер Shorts в YouTube. Тексты, сообщения и пароли она не читает и не сохраняет.\n\nСтатистика использования. По разрешению «Доступ к истории использования» приложение считает, сколько времени вы провели в приложениях. Это нужно для лимитов, банка времени и статистики.\n\nЧто хранится на телефоне: ваши правила, задачи и списки покупок, журнал блокировок (90 дней), счета банка времени, итоги дней, настройки, имя (если вы его указали) и PIN в виде хэша.\n\nУведомления и будильники нужны для напоминаний и предупреждений о лимитах.\n\nУдаление данных. Все данные удаляются вместе с приложением или через «Очистить данные» в настройках телефона. Службу и разрешения можно выключить в настройках телефона в любой момент.\n\nПриложение не предназначено для детей младше 13 лет и не собирает их данные. Если политика изменится, новая версия появится здесь и на странице приложения.</string>
+    <string name="privacy_contact">Вопросы: %1$s</string>
+</resources>

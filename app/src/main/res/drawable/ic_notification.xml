@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Значок уведомлений (строка состояния): логотип из logo/Gray/tyb_logo.svg одним цветом.
+    Система сама перекрашивает его, важна только форма. Поля обрезаны (видимая область 120..904),
+    линии чуть толще оригинала, чтобы читались в размере 24dp.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="784"
+    android:viewportHeight="784">
+    <group
+        android:translateX="-120"
+        android:translateY="-120">
+        <!-- Круговая стрелка -->
+        <path
+            android:pathData="M677.0,226.2 A330,330 0 1 1 322.7,241.7"
+            android:strokeWidth="56"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M716.7,177.5 L619.6,193.1 L654.7,284.9"
+            android:strokeWidth="56"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+        <!-- Левое полушарие -->
+        <path
+            android:pathData="M482.0,315.0 A50.0,50.0 0 0 0 397.0,342.5 A54.6,54.6 0 0 0 334.8,417.5 A58.8,58.8 0 0 0 312.0,520.0 A58.8,58.8 0 0 0 334.8,622.5 A54.6,54.6 0 0 0 397.0,697.5 A50.0,50.0 0 0 0 482.0,725.0 Z"
+            android:strokeWidth="48"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M427.0,385.0 C382.0,405.0 372.0,455.0 400.0,492.0"
+            android:strokeWidth="40"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M327.0,480.0 C367.0,505.0 377.0,555.0 352.0,592.0"
+            android:strokeWidth="40"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M434.0,622.0 C402.0,632.0 390.0,660.0 396.0,688.0"
+            android:strokeWidth="40"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+        <!-- Правое полушарие -->
+        <path
+            android:pathData="M542.0,315.0 A50.0,50.0 0 0 1 627.0,342.5 A54.6,54.6 0 0 1 689.2,417.5 A58.8,58.8 0 0 1 712.0,520.0 A58.8,58.8 0 0 1 689.2,622.5 A54.6,54.6 0 0 1 627.0,697.5 A50.0,50.0 0 0 1 542.0,725.0 Z"
+            android:strokeWidth="48"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M597.0,385.0 C642.0,405.0 652.0,455.0 624.0,492.0"
+            android:strokeWidth="40"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M697.0,480.0 C657.0,505.0 647.0,555.0 672.0,592.0"
+            android:strokeWidth="40"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M590.0,622.0 C622.0,632.0 634.0,660.0 628.0,688.0"
+            android:strokeWidth="40"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round" />
+    </group>
+</vector>

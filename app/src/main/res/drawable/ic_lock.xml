@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Блокировка: замок (из docs/design/TYB-logo-animation.html, i-lock) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:pathData="M8.0,10.5h8.0a3.5,3.5 0 0,1 3.5,3.5v3.0a3.5,3.5 0 0,1 -3.5,3.5h-8.0a3.5,3.5 0 0,1 -3.5,-3.5v-3.0a3.5,3.5 0 0,1 3.5,-3.5z"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M8,10.5V8a4,4 0 0,1 8,0v2.5"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M12,14.5v2"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

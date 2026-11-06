@@ -1,0 +1,492 @@
+<resources>
+    <!-- Название приложения одинаковое на всех языках -->
+    <string name="app_name" translatable="false">Take Your Brain</string>
+
+    <!-- Нижняя навигация -->
+    <string name="nav_apps">Apps</string>
+    <string name="nav_focus">Focus</string>
+    <string name="nav_stats">Statistics</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Общие -->
+    <string name="back">Back</string>
+
+    <!-- Длительности -->
+    <string name="duration_less_than_minute">less than 1 min</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="duration_hours">%1$d h</string>
+    <string name="duration_hours_minutes">%1$d h %2$d min</string>
+
+    <!-- Список приложений -->
+    <string name="apps_search_hint">Search apps</string>
+    <string name="apps_clear_search">Clear search</string>
+    <string name="apps_nothing_found">Nothing found</string>
+    <string name="apps_not_used_today">Not used today</string>
+    <string name="apps_today_usage">Today: %1$s</string>
+    <string name="apps_no_usage_access">No access to usage data, so screen time can\'t be counted.</string>
+    <string name="apps_grant_access">Grant access</string>
+    <string name="apps_accessibility_off">Blocking doesn\'t work: the accessibility service is off.</string>
+    <string name="apps_turn_on">Turn on</string>
+    <string name="apps_section_blocked">Blocked</string>
+    <string name="apps_section_all">All apps</string>
+    <string name="apps_section_count" translatable="false">%1$s · %2$d</string>
+    <string name="sort_button">Sort</string>
+    <string name="sort_by_usage">By time today</string>
+    <string name="sort_by_name">By name</string>
+    <string name="sort_by_install_date">By install date (newest first)</string>
+
+    <!-- Помощник по разрешениям -->
+    <string name="permissions_title">Permissions</string>
+    <string name="permissions_intro">To count screen time and block apps, Take Your Brain needs a few permissions. Tap a button, turn the permission on and come back: the status updates by itself.</string>
+    <string name="permissions_progress">Granted: %1$d of %2$d</string>
+    <string name="permissions_continue">Continue</string>
+    <string name="permissions_not_all_required">Some required permissions are missing. You can continue, but the app won\'t work fully. You can come back here from Settings.</string>
+    <string name="permission_step_title" translatable="false">%1$d. %2$s</string>
+    <string name="permission_status_granted">Granted</string>
+    <string name="permission_status_not_granted">Not granted</string>
+    <string name="permission_required">Required</string>
+    <string name="permission_recommended">Recommended</string>
+    <string name="permission_open_settings">Open settings</string>
+    <string name="permission_allow">Allow</string>
+    <string name="permission_app_info">App info</string>
+
+    <string name="perm_usage_title">Usage data access</string>
+    <string name="perm_usage_desc">Lets the app count how much time you spend in each app. Find Take Your Brain in the list and turn the switch on.</string>
+    <string name="perm_accessibility_title">Accessibility service</string>
+    <string name="perm_accessibility_desc">Lets the app see which app is open and close blocked ones. Open Installed apps → Take Your Brain and turn it on. If the switch is greyed out, open App info → ⋮ (top right) → Allow restricted settings, then try again.</string>
+    <string name="perm_notifications_title">Notifications</string>
+    <string name="perm_notifications_desc">Warnings shortly before a limit runs out, reminders for your tasks and the end of focus.</string>
+    <string name="perm_battery_title">No battery restrictions</string>
+    <string name="perm_battery_desc">So the phone does not stop protection in the background to save power. Find Take Your Brain in the list and choose Unrestricted (on some phones, the option to not optimize).</string>
+
+    <!-- Настройки -->
+    <string name="settings_permissions">Permissions</string>
+    <string name="settings_permissions_summary">Check which permissions are granted</string>
+
+    <!-- Правило блокировки -->
+    <string name="rule_any_condition">The app is blocked when any of the enabled conditions is met.</string>
+    <string name="rule_full_block">Full block</string>
+    <string name="rule_full_block_desc">The app is always blocked</string>
+    <string name="rule_limit">Daily limit</string>
+    <string name="rule_limit_desc">Blocked after this much time per day. Resets at midnight.</string>
+    <string name="rule_used_today">Used today: %1$s</string>
+    <string name="rule_schedule">Schedule</string>
+    <string name="schedule_none">No schedule</string>
+    <string name="schedule_allow_only">Allowed only during these periods</string>
+    <string name="schedule_block_during">Blocked during these periods</string>
+    <string name="schedule_hint">A period can cross midnight, for example 23:00–07:00. The days are the days the period starts on.</string>
+    <string name="interval_next_day">until the next day</string>
+    <string name="interval_start">Start</string>
+    <string name="interval_end">End</string>
+    <string name="interval_add">Add period</string>
+    <string name="interval_delete">Delete period</string>
+    <string name="rule_save">Save</string>
+    <string name="rule_delete">Delete rule</string>
+    <string name="rule_delete_confirm">Delete the rule for %1$s?</string>
+    <string name="error_no_condition">Turn on at least one condition: full block, limit or schedule.</string>
+    <string name="error_limit_range">The limit must be from 1 to 1440 minutes.</string>
+    <string name="error_no_intervals">Add at least one period to the schedule.</string>
+    <string name="error_no_days">Choose at least one day for each period.</string>
+    <string name="error_same_time">The start and end of a period must be different.</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+
+    <!-- Краткое описание правила в списке приложений -->
+    <string name="summary_full_block">Full block</string>
+    <string name="summary_limit">Limit %1$s</string>
+    <string name="summary_allow_only">Allowed by schedule</string>
+    <string name="summary_block_during">Blocked by schedule</string>
+    <string name="list_separator" translatable="false">" · "</string>
+
+    <!-- Экран блокировки -->
+    <string name="block_reason_full">Full block is on</string>
+    <string name="block_reason_limit">The %1$s limit is used up</string>
+    <string name="block_reason_allow_today">Available from %1$s to %2$s</string>
+    <string name="block_reason_allow_day">Available: %1$s, from %2$s to %3$s</string>
+    <string name="block_reason_allow_none">Not available by schedule</string>
+    <string name="block_reason_blocked_until">Blocked by schedule until %1$s</string>
+    <string name="block_reason_blocked_until_day">Blocked by schedule until %1$s, %2$s</string>
+    <string name="block_remaining">Unlocks in %1$s</string>
+    <string name="block_no_unlock_time">Stays blocked until you change the rule</string>
+    <string name="block_time_over">The block is over, you can open the app</string>
+    <string name="block_calm_message">Take a breath. This is a good moment to rest from the screen.</string>
+    <string name="block_go_home">Go to home screen</string>
+
+    <!-- Уведомления -->
+    <string name="channel_warnings">Warnings</string>
+    <string name="channel_warnings_desc">Reminders shortly before an app gets blocked</string>
+    <string name="warning_limit_title">%1$s: %2$s left</string>
+    <string name="warning_limit_text">Then the app will be blocked until midnight.</string>
+    <string name="warning_allowed_title">%1$s: available until %2$s</string>
+    <string name="warning_allowed_text">The allowed time is ending soon.</string>
+    <string name="warning_blocked_title">%1$s: blocked from %2$s</string>
+    <string name="warning_blocked_text">A scheduled block starts soon.</string>
+
+    <!-- Настройки: защита и батарея -->
+    <string name="settings_section_protection">Protection</string>
+    <string name="settings_warning_time">Warn before a block</string>
+    <string name="settings_warning_minutes">%1$d min before</string>
+    <string name="settings_section_battery">Battery on Samsung</string>
+    <string name="settings_battery_intro">Samsung puts background apps to sleep. So that protection keeps working, do two things once:</string>
+    <string name="settings_battery_step1">1. Allow running without battery restrictions.</string>
+    <string name="settings_battery_step2">2. Battery → Background usage limits → Never auto sleeping apps → + → Take Your Brain.</string>
+    <string name="settings_open_battery">Open battery settings</string>
+
+    <!-- PIN-код -->
+    <string name="pin_change_title">Change PIN</string>
+    <string name="pin_enter_to_edit">Enter the PIN to change this rule</string>
+    <string name="pin_enter_to_unlock">Enter the PIN to unlock</string>
+    <string name="pin_enter_to_change_setting">Enter the PIN to change this setting</string>
+    <string name="pin_enter_current">Enter your current PIN</string>
+    <string name="pin_wrong">Wrong PIN. Attempts left: %1$d</string>
+    <string name="pin_locked">Too many attempts. Try again in %1$d s</string>
+
+    <!-- Разблокировка с экрана блокировки -->
+    <string name="block_unlock">Unlock</string>
+    <string name="block_passes_left">Passes left today: %1$d</string>
+    <string name="block_no_passes">No passes left for today</string>
+    <string name="block_wait_text">Use this pause to ask yourself: do you really need it right now?</string>
+    <string name="block_wait_cancel">Never mind</string>
+    <string name="block_open_for">Open for %1$d min</string>
+
+    <!-- Режим фокуса -->
+    <string name="focus_intro">Choose apps and time. While focus is on, these apps are fully blocked and passes don\'t work. You can end it early only with the PIN.</string>
+    <string name="focus_duration">Duration</string>
+    <string name="focus_until_pick">Until…</string>
+    <string name="focus_until">Until %1$s</string>
+    <string name="focus_until_tomorrow">Until tomorrow, %1$s</string>
+    <string name="focus_start_until_tomorrow">Start focus until tomorrow, %1$s</string>
+    <string name="focus_apps_selected">Apps · selected: %1$d</string>
+    <string name="focus_select_with_rules">With rules</string>
+    <string name="focus_clear">Clear</string>
+    <string name="focus_has_rule">Has a rule</string>
+    <string name="focus_choose_app_hint">Choose at least one app</string>
+    <string name="focus_start">Start focus</string>
+    <string name="focus_start_for">Start focus · %1$s</string>
+    <string name="focus_start_until">Start focus until %1$s</string>
+    <string name="focus_active_title">Focus is on</string>
+    <string name="focus_apps_blocked">Apps blocked: %1$d</string>
+    <string name="focus_stop">End early</string>
+    <string name="pin_enter_to_stop_focus">Enter the PIN to end focus early</string>
+    <string name="block_reason_focus">Focus mode is on</string>
+    <string name="channel_focus">Focus</string>
+    <string name="channel_focus_desc">Countdown while focus mode is on</string>
+    <string name="focus_notif_title">Focus until %1$s</string>
+    <string name="focus_finished_title">Focus finished</string>
+    <string name="focus_finished_text">Well done! The apps are available again.</string>
+
+    <!-- Неблокируемые приложения -->
+    <string name="apps_protected">System app, can\'t be blocked</string>
+    <string name="apps_protected_toast">This app can\'t be blocked: you need it for calls, emergencies or settings.</string>
+
+    <!-- Настройки: язык (названия языков не переводятся — каждый пишется на своём языке) -->
+    <string name="settings_language">Language</string>
+    <string name="language_system">As on the phone</string>
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_russian" translatable="false">Русский</string>
+
+    <!-- Настройки: PIN и пропуски -->
+    <string name="settings_passes">Passes per day</string>
+    <string name="settings_passes_desc">One-time %1$d-minute unlocks from the block screen, for all apps together</string>
+    <string name="settings_change_pin">Change PIN</string>
+    <string name="settings_change_pin_desc">Needed to change rules and unlock apps</string>
+
+    <!-- Служба специальных возможностей (видно в системных настройках) -->
+    <string name="accessibility_service_description">Detects which app is open to apply your screen time rules. No data leaves your phone.</string>
+    <!-- Статистика -->
+    <string name="stats_mode_day">Day</string>
+    <string name="stats_mode_week">7 days</string>
+    <string name="stats_today">Today</string>
+    <string name="stats_yesterday">Yesterday</string>
+    <string name="stats_last_7_days">Last 7 days</string>
+    <string name="stats_screen_time">Screen time</string>
+    <string name="stats_blocks">Blocks</string>
+    <string name="stats_daily_average">%1$s a day on average</string>
+    <string name="stats_by_day">Screen time by day</string>
+    <string name="stats_chart_hint">Tap a bar to see that day.</string>
+    <string name="stats_chart_item">%1$s: %2$s</string>
+    <string name="stats_top_apps">Most used</string>
+    <string name="stats_no_data">No screen time yet.</string>
+    <!-- Правила v2 и банк времени -->
+    <string name="rule_full_block_note">Full block can only be removed after a 10-minute wait. Passes and the time bank don\'t work on it.</string>
+    <string name="rule_full_block_will_wait">After saving, the full block will be removed in 10 minutes. The wait can\'t be skipped.</string>
+    <string name="rule_unblock_pending">Full block will be removed at %1$s</string>
+    <string name="rule_unblock_cancel">Keep it</string>
+    <string name="rule_full_block_confirm_title">Turn on full block?</string>
+    <string name="rule_full_block_confirm_text">The app will always be closed. Passes and the time bank don\'t work on it.\n\nTo remove full block you\'ll have to wait 10 minutes, and the wait can\'t be skipped.</string>
+    <string name="rule_full_block_confirm_ok">Turn on</string>
+    <string name="rule_delete_confirm_full">Delete the rule for %1$s? Full block will be removed only after 10 minutes, then the rule will be deleted.</string>
+    <string name="rule_limit_weekdays">Weekdays</string>
+    <string name="rule_limit_weekend">Weekend</string>
+    <string name="rule_limit_empty_hint">Weekdays are Mon–Fri, weekend is Sat–Sun. “No limit” means the app is not time-limited on those days.</string>
+    <string name="rule_limit_split">Different limit on weekdays and weekends</string>
+    <string name="rule_bank_balance">In the bank: %1$s</string>
+    <string name="rule_bank_hint">Unused limit minutes go to the bank every day. You can spend them on the block screen on spending days (Settings → Time bank).</string>
+    <string name="error_limit_split_empty">Set a limit for weekdays or for the weekend.</string>
+    <string name="summary_full_block_until">Full block until %1$s</string>
+    <string name="summary_limit_split">Limit %1$s, weekend %2$s</string>
+    <string name="summary_limit_weekdays">Weekday limit %1$s</string>
+    <string name="summary_limit_weekend">Weekend limit %1$s</string>
+    <string name="bank_balance">In the bank: %1$s</string>
+    <string name="bank_spend_only_on">The bank can be spent on: %1$s.</string>
+    <plurals name="bank_price">
+        <item quantity="one">Right now 1 minute costs %1$d bank minute.</item>
+        <item quantity="other">Right now 1 minute costs %1$d bank minutes.</item>
+    </plurals>
+    <string name="bank_not_enough">Not enough minutes in the bank yet.</string>
+    <string name="bank_take">Take %1$d min from the bank</string>
+    <string name="bank_take_priced">%1$d min (costs %2$d)</string>
+    <string name="bank_refund_hint">If you leave the app earlier, unused minutes go back to the bank.</string>
+    <string name="unblocked_title">%1$s: full block removed</string>
+    <string name="unblocked_text">The 10-minute wait is over.</string>
+    <string name="settings_section_bank">Time bank</string>
+    <string name="settings_bank_cap">Bank limit per app</string>
+    <string name="settings_bank_spend_days">Spending days</string>
+    <string name="settings_bank_weekly_reset">Resets when Monday starts</string>
+    <string name="settings_bank_weekly_reset_desc">Otherwise minutes keep adding up, but not above the bank limit</string>
+    <string name="settings_bank_buy_blocked">Buy time in blocked periods</string>
+    <plurals name="settings_bank_buy_blocked_desc">
+        <item quantity="one">Time inside a “blocked” period costs more: 1 minute = %1$d bank minute</item>
+        <item quantity="other">Time inside a “blocked” period costs more: 1 minute = %1$d bank minutes</item>
+    </plurals>
+    <string name="dialog_save">Save</string>
+    <string name="days_none">never</string>
+    <string name="bank_title">Time bank</string>
+    <string name="bank_how_title">How it works</string>
+    <string name="bank_how_text">If you don\'t use up an app\'s limit, the rest goes to that app\'s bank the next day (up to %1$s). You can spend the minutes on the block screen on: %2$s. The bank doesn\'t work on full block or focus mode. Outside an “allowed only” period the price is ×%3$d.</string>
+    <string name="bank_accounts">Saved</string>
+    <string name="bank_no_accounts">No apps with a limit yet.</string>
+    <string name="bank_history">History</string>
+    <string name="bank_no_history">No operations yet. The first minutes will appear tomorrow.</string>
+    <string name="bank_tx_earn">saved on %1$s</string>
+    <string name="block_full_how_to_remove">It can be removed in the rule, after a 10-minute wait</string>
+    <string name="bank_tx_spend">taken</string>
+    <string name="bank_tx_refund">unused minutes returned</string>
+    <string name="bank_tx_expire">expired</string>
+    <!-- Дела и напоминания -->
+    <string name="nav_todo">To-do</string>
+    <string name="apps_open_stats">Open statistics</string>
+    <string name="perm_exact_alarms_title">Exact reminders</string>
+    <string name="perm_exact_alarms_desc">So that reminders, the end of focus and full block removal arrive right on time. Without it Android may delay them by a few minutes.</string>
+    <string name="channel_reminders">Reminders</string>
+    <string name="channel_reminders_desc">Reminders about your tasks</string>
+    <string name="task_notification_text">Time to do it</string>
+    <string name="task_action_done">Done</string>
+    <string name="task_action_snooze_10">+10 min</string>
+    <string name="task_action_snooze_60">+1 h</string>
+    <string name="todo_tasks">Tasks</string>
+    <string name="todo_tasks_empty">No tasks</string>
+    <plurals name="todo_tasks_count">
+        <item quantity="one">%d task</item>
+        <item quantity="other">%d tasks</item>
+    </plurals>
+    <string name="todo_next">Next: %1$s</string>
+    <string name="todo_shopping">Shopping</string>
+    <string name="when_today">today, %1$s</string>
+    <string name="when_tomorrow">tomorrow, %1$s</string>
+    <string name="when_day">%1$s, %2$s</string>
+    <string name="rule_text_interval">every %1$s</string>
+    <string name="rule_text_interval_from_done">%1$s after it\'s done</string>
+    <string name="rule_text_daily">every day at %1$s</string>
+    <string name="rule_text_weekly">every %1$s at %2$s</string>
+    <string name="rule_text_monthly">monthly on day %1$d, %2$s</string>
+    <string name="task_done_at">Done %1$s</string>
+    <string name="task_snoozed_until">Snoozed until %1$s</string>
+    <string name="task_fired">Reminded %1$s</string>
+    <string name="task_next">next %1$s</string>
+    <string name="tasks_exact_alarms_off">Reminders may be a few minutes late: exact alarms are not allowed.</string>
+    <string name="tasks_empty">No tasks yet. Tap “New task”.</string>
+    <string name="task_new">New task</string>
+    <string name="task_edit_title">Task</string>
+    <string name="task_marked_next">Done. Next reminder: %1$s</string>
+    <string name="tasks_done_section">Done · %1$d</string>
+    <string name="tasks_clear_done">Clear</string>
+    <string name="task_title">What to do</string>
+    <string name="task_note">Note (optional)</string>
+    <string name="task_reminder">Reminder</string>
+    <string name="task_delete">Delete task</string>
+    <string name="task_delete_confirm">Delete this task?</string>
+    <string name="reminder_none">No reminder</string>
+    <string name="reminder_once">Once</string>
+    <string name="reminder_after">In…</string>
+    <string name="reminder_interval">Every N hours</string>
+    <string name="reminder_weekly">Days of the week</string>
+    <string name="reminder_monthly">Monthly</string>
+    <string name="reminder_none_hint">The task will just stay in the list.</string>
+    <string name="reminder_interval_hours">Interval, hours</string>
+    <string name="reminder_first_time">First time</string>
+    <string name="reminder_from_start">On schedule from the first time</string>
+    <string name="reminder_from_done">From the moment I tap “Done”</string>
+    <string name="reminder_month_day">Day of month</string>
+    <string name="reminder_month_hint">If a month has no such day (for example, the 31st), I\'ll remind you on the last day.</string>
+    <string name="task_error_title">Write what needs to be done.</string>
+    <string name="task_error_past">This time has already passed.</string>
+    <string name="task_error_interval">The interval must be from 1 to 168 hours.</string>
+    <string name="task_error_days">Choose at least one day.</string>
+    <string name="task_error_month_day">The day of month must be from 1 to 31.</string>
+    <string name="settings_section_reminders">Reminders</string>
+    <string name="settings_quiet_hours">Quiet hours</string>
+    <string name="settings_quiet_hours_desc">Reminders that fall in this time arrive when quiet hours end</string>
+    <string name="settings_quiet_from">from</string>
+    <string name="settings_quiet_to">to</string>
+    <string name="settings_exact_alarms">Exact reminders</string>
+    <string name="settings_exact_alarms_on">Allowed: reminders arrive right on time</string>
+    <string name="settings_exact_alarms_off">Not allowed: reminders may be a few minutes late. Tap to allow</string>
+    <!-- Выбор лимита, вид напоминания, список покупок -->
+    <string name="limit_none">No limit</string>
+    <string name="limit_none_short">no limit</string>
+    <string name="limit_custom">Custom</string>
+    <string name="limit_custom_label">Your value</string>
+    <string name="limit_minutes_suffix">min</string>
+    <string name="reminder_choose_title">When to remind?</string>
+    <string name="reminder_none_desc">The task just stays in the list</string>
+    <string name="reminder_once_desc">On the chosen day and time</string>
+    <string name="reminder_after_desc">In 10 minutes, an hour, a couple of hours</string>
+    <string name="reminder_interval_desc">For example, drink water every 2 hours</string>
+    <string name="reminder_weekly_desc">For example, on Saturdays at 9 PM</string>
+    <string name="reminder_monthly_desc">For example, on the 1st at 9 AM</string>
+    <string name="todo_shopping_empty">Nothing to buy</string>
+    <plurals name="todo_shopping_count">
+        <item quantity="one">%d item to buy</item>
+        <item quantity="other">%d items to buy</item>
+    </plurals>
+    <string name="shopping_default_list">Groceries</string>
+    <string name="shopping_undo">Undo</string>
+    <string name="shopping_deleted">Deleted: %1$s</string>
+    <string name="shopping_cleared">Removed bought items: %1$d</string>
+    <string name="shopping_share">Share the list</string>
+    <string name="shopping_menu">List actions</string>
+    <string name="shopping_list_new">New list</string>
+    <string name="shopping_list_new_short">List</string>
+    <string name="shopping_list_rename">Rename list</string>
+    <string name="shopping_list_delete">Delete list</string>
+    <string name="shopping_list_delete_confirm">Delete the list “%1$s” with everything in it?</string>
+    <string name="shopping_list_name">Name</string>
+    <string name="shopping_empty">The list is empty. Type what to buy below and press Enter. Tap an item when bought, long-press to edit, swipe left to delete.</string>
+    <string name="shopping_bought_section">Bought · %1$d</string>
+    <string name="shopping_clear_bought">Remove bought</string>
+    <string name="shopping_add_hint">Add an item…</string>
+    <string name="shopping_add">Add</string>
+    <string name="shopping_item_edit">Item</string>
+    <string name="shopping_item_name">What to buy</string>
+    <string name="shopping_item_quantity">Quantity</string>
+    <string name="shopping_item_quantity_hint">2 l, 3 pcs</string>
+    <string name="shopping_item_delete">Delete</string>
+    <!-- Этап 11: профиль, серия, итоги недели, задачи на экране блокировки, фокус на задаче -->
+    <string name="nav_profile">Profile</string>
+    <string name="profile_bank_desc">Saved up: %1$s</string>
+    <string name="profile_stats_desc">Today, 7 days, week results</string>
+    <string name="profile_settings_desc">PIN, passes, reminders, language</string>
+    <string name="streak_title">Streak within limits</string>
+    <plurals name="streak_days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <plurals name="streak_best">
+        <item quantity="one">Best: %d day</item>
+        <item quantity="other">Best: %d days</item>
+    </plurals>
+    <string name="streak_today_clean">Today is going well so far — the flame is burning</string>
+    <string name="streak_today_broken">Today a limit was exceeded or a pass was used — the streak starts again tomorrow</string>
+    <string name="streak_today_neutral">Add a rule for an app and the flame will light up</string>
+    <string name="stats_week_results">Week results</string>
+    <string name="stats_streak_hint">In a row without going over limits or using passes</string>
+    <string name="stats_saved">Left unused from limits</string>
+    <string name="stats_bank_earned">Added to the bank</string>
+    <string name="stats_bank_spent">Spent from the bank</string>
+    <plurals name="block_tasks_title">
+        <item quantity="one">Instead — %d task</item>
+        <item quantity="other">Instead — %d tasks</item>
+    </plurals>
+    <string name="block_open_tasks">Open tasks</string>
+    <string name="focus_on_task">Task: %1$s</string>
+    <string name="focus_task_banner">Focus on the task</string>
+    <string name="focus_task_done">Task done</string>
+    <string name="task_focus">Focus on this task</string>
+    <!-- Этап 12: части приложений (YouTube Shorts), отладочный дамп -->
+    <string name="rule_elements">Inside the app</string>
+    <string name="element_youtube_shorts">Block Shorts</string>
+    <string name="element_youtube_shorts_desc">When Shorts open, YouTube goes back right away. The rest of YouTube works as usual.</string>
+    <string name="element_blocked_toast">Shorts are blocked</string>
+    <string name="summary_shorts">Shorts blocked</string>
+    <string name="settings_section_dev">For the developer</string>
+    <string name="settings_debug_dump">Screen dump to Logcat</string>
+    <string name="settings_debug_dump_desc">Writes the element tree of the open screen (tag TYB_DUMP). Only in the debug build.</string>
+    <string name="element_always">Always</string>
+    <string name="element_after_limit">After a limit</string>
+    <string name="element_used_today">Watched today: %1$s</string>
+    <string name="element_limit_toast">The Shorts limit for today is used up</string>
+    <string name="summary_shorts_limit">Shorts %1$s a day</string>
+    <string name="reminder_after_custom">In how long</string>
+    <string name="reminder_unit_minutes">min</string>
+    <string name="reminder_unit_hours">h</string>
+    <string name="task_error_after">Set when to remind: from 1 minute to 7 days.</string>
+    <!-- Этап 13: оформление -->
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="theme_system">Like the phone</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="settings_glass">Glass style</string>
+    <string name="settings_glass_desc">The tab bar blurs what is under it, cards are see-through. May be slower on weak phones</string>
+    <string name="settings_haptics">Vibration</string>
+    <string name="settings_haptics_desc">A light tap when switching tabs, pressing PIN digits and switches</string>
+    <string name="pin_hello">Hello</string>
+    <string name="pin_hello_name">Hello, %1$s</string>
+    <string name="pin_create_title">Create a PIN code</string>
+    <string name="pin_repeat_title">Repeat the PIN code</string>
+    <string name="pin_enter_title">Enter the PIN code</string>
+    <string name="pin_setup_hint">4 digits. You will need it to change rules and to unlock apps.</string>
+    <string name="pin_mismatch">The codes do not match. Try again</string>
+    <string name="pin_created">PIN code created</string>
+    <string name="pin_back">Back</string>
+    <string name="pin_done">Done</string>
+    <string name="pin_backspace">Delete</string>
+    <string name="pin_forgot">Forgot your PIN?</string>
+    <string name="pin_forgot_text">The PIN can only be reset by deleting the app — together with all rules. That is on purpose: otherwise the protection would be too easy to bypass. Only a fingerprint of the PIN is stored, so even we cannot see it.</string>
+    <string name="settings_section_main">Main</string>
+    <string name="settings_name">What should we call you</string>
+    <string name="settings_name_desc">For the greeting “Hello, …”</string>
+    <string name="settings_name_empty">not set</string>
+    <string name="settings_name_hint">Name</string>
+    <string name="settings_permissions_missing">An important permission is missing — blocking does not work.</string>
+    <string name="settings_more">More</string>
+    <string name="settings_more_desc">Permissions, setup guide, app version</string>
+    <string name="settings_version">App version</string>
+    <string name="settings_battery_ok">Background work is allowed</string>
+    <string name="settings_battery_ok_desc">Tap to check “Unrestricted” in the Samsung battery settings</string>
+    <string name="bank_total_of_cap">saved up, a full brain is %1$s</string>
+    <string name="block_wait_title_short">Take a breath</string>
+    <string name="intro_skip">Skip</string>
+    <string name="settings_replay_intro">Show the logo animation</string>
+    <string name="settings_preview_streak">Preview: streak celebration</string>
+    <string name="settings_preview_focus">Preview: focus finished</string>
+    <string name="streak_celebrate_text">No limits exceeded in all that time. Keep it up!</string>
+    <string name="streak_celebrate_ok">Great</string>
+    <string name="widget_streak_desc">Your streak: days in a row without exceeding limits</string>
+    <string name="widget_streak_preview">7 days</string>
+    <string name="settings_add_widget">Add the streak widget</string>
+    <string name="settings_add_widget_desc">A flame with your streak on the home screen</string>
+    <string name="settings_replay_tour">Show the app tour</string>
+    <string name="settings_replay_tour_desc">Short cards about what is where</string>
+    <string name="tour_next">Next</string>
+    <string name="tour_done">Get started</string>
+    <string name="tour_tabs_title">Four tabs</string>
+    <string name="tour_tabs_text">Apps: your rules and time today. Focus: block apps for a while. To-do: tasks and shopping. Profile: flame, bank, statistics and settings.</string>
+    <string name="tour_rule_title">Rules</string>
+    <string name="tour_rule_text">Tap an app in the list and choose a daily limit, a schedule or a full block. When time is up, the app closes. Changing a rule needs your PIN.</string>
+    <string name="tour_focus_title">Focus</string>
+    <string name="tour_focus_text">Choose apps and a time. They stay fully blocked until the focus ends, and you can end it early only with your PIN.</string>
+    <string name="tour_bank_title">Time bank</string>
+    <string name="tour_bank_text">Limit minutes you did not use are saved up in the bank. On spending days, usually weekends, you can use them on the block screen.</string>
+    <string name="tour_flame_title">Flame</string>
+    <string name="tour_flame_text">It burns while you stay within your limits. See your streak in Profile, and you can add a widget with the flame to your home screen.</string>
+    <string name="disclosure_title">Why the accessibility service is needed</string>
+    <string name="disclosure_text">Take Your Brain uses the accessibility service (Accessibility API) to block apps according to your rules.\n\nWhat the service sees:\n• which app is open right now (its package name);\n• internal IDs of screen elements in apps where you blocked a part, such as the Shorts player in YouTube.\n\nWhat the service does:\n• counts the time while an app is open;\n• closes a blocked app and shows the block screen.\n\nThis data stays only on your phone. The app does not send or share it with anyone: it has no internet access. The service does not read or store texts, messages or passwords.\n\nBlocking will not work without the service. You can turn it off at any time in the phone settings.</string>
+    <string name="disclosure_accept">I agree, open settings</string>
+    <string name="disclosure_decline">Not now</string>
+    <string name="privacy_title">Privacy policy</string>
+    <string name="privacy_text">Date: October 30, 2026\n\nTake Your Brain helps you limit time in apps. All data is stored only on your phone. The app has no internet access: it sends nothing to us or to anyone else. There are no ads, analytics, accounts or cloud backups.\n\nAccessibility service (Accessibility API). It is needed to block apps according to your rules. The service learns which app is open (package name) and the internal IDs of screen elements in apps where you blocked a part, such as the Shorts player in YouTube. It does not read or store texts, messages or passwords.\n\nUsage statistics. With the Usage access permission, the app counts how much time you spend in apps. This is needed for limits, the time bank and statistics.\n\nWhat is stored on the phone: your rules, tasks and shopping lists, the block log (90 days), time bank accounts, daily results, settings, your name (if you entered it) and your PIN as a hash.\n\nNotifications and alarms are used for reminders and limit warnings.\n\nDeleting data. All data is deleted together with the app or with Clear data in the phone settings. You can turn off the service and permissions in the phone settings at any time.\n\nThe app is not intended for children under 13 and does not collect their data. If this policy changes, the new version will appear here and on the app page.</string>
+    <string name="privacy_contact">Questions: %1$s</string>
+    <string name="privacy_contact_email" translatable="false">takeyourbrain067@gmail.com</string>
+</resources>

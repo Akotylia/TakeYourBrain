@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Take Your Brain: animated logo for the Android 12+ splash screen (1000 ms). -->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector android:width="288dp" android:height="288dp" android:viewportWidth="1024" android:viewportHeight="1024">
+            <!-- scaled so the ring fits the splash icon's visible circle -->
+            <group android:pivotX="512" android:pivotY="512" android:scaleX="0.9" android:scaleY="0.9">
+            <path android:name="hemi0" android:pathData="M482.0,315.0 A50.0,50.0 0 0 0 397.0,342.5 A54.6,54.6 0 0 0 334.8,417.5 A58.8,58.8 0 0 0 312.0,520.0 A58.8,58.8 0 0 0 334.8,622.5 A54.6,54.6 0 0 0 397.0,697.5 A50.0,50.0 0 0 0 482.0,725.0 Z" android:strokeColor="#FFFFFF" android:strokeWidth="40"
+                android:strokeLineCap="round" android:strokeLineJoin="round" android:trimPathEnd="0"/>
+            <path android:name="hemi1" android:pathData="M542.0,315.0 A50.0,50.0 0 0 1 627.0,342.5 A54.6,54.6 0 0 1 689.2,417.5 A58.8,58.8 0 0 1 712.0,520.0 A58.8,58.8 0 0 1 689.2,622.5 A54.6,54.6 0 0 1 627.0,697.5 A50.0,50.0 0 0 1 542.0,725.0 Z" android:strokeColor="#FFFFFF" android:strokeWidth="40"
+                android:strokeLineCap="round" android:strokeLineJoin="round" android:trimPathEnd="0"/>
+            <path android:name="groove0" android:pathData="M427.0,385.0 C382.0,405.0 372.0,455.0 400.0,492.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                android:strokeLineCap="round" android:strokeLineJoin="round" android:trimPathEnd="0"/>
+            <path android:name="groove1" android:pathData="M327.0,480.0 C367.0,505.0 377.0,555.0 352.0,592.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                android:strokeLineCap="round" android:strokeLineJoin="round" android:trimPathEnd="0"/>
+            <path android:name="groove2" android:pathData="M434.0,622.0 C402.0,632.0 390.0,660.0 396.0,688.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                android:strokeLineCap="round" android:strokeLineJoin="round" android:trimPathEnd="0"/>
+            <path android:name="groove3" android:pathData="M597.0,385.0 C642.0,405.0 652.0,455.0 624.0,492.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                android:strokeLineCap="round" android:strokeLineJoin="round" android:trimPathEnd="0"/>
+            <path android:name="groove4" android:pathData="M697.0,480.0 C657.0,505.0 647.0,555.0 672.0,592.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                android:strokeLineCap="round" android:strokeLineJoin="round" android:trimPathEnd="0"/>
+            <path android:name="groove5" android:pathData="M590.0,622.0 C622.0,632.0 634.0,660.0 628.0,688.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                android:strokeLineCap="round" android:strokeLineJoin="round" android:trimPathEnd="0"/>
+            <path android:name="ring" android:pathData="M322.7,241.7 A330,330 0 1 0 677.0,226.2" android:strokeColor="#5CF2B4" android:strokeWidth="44"
+                android:strokeLineCap="round" android:strokeLineJoin="round" android:trimPathEnd="0"/>
+                <group android:name="arrow" android:pivotX="677.0" android:pivotY="226.2" android:scaleX="0" android:scaleY="0">
+                    <path android:pathData="M716.7,177.5 L619.6,193.1 L654.7,284.9" android:strokeColor="#5CF2B4" android:strokeWidth="44"
+                        android:strokeLineCap="round" android:strokeLineJoin="round"/>
+                </group>
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="hemi0">
+        <aapt:attr name="android:animation">
+            <objectAnimator android:propertyName="trimPathEnd" android:valueFrom="0" android:valueTo="1"
+                android:startOffset="0" android:duration="450" android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="hemi1">
+        <aapt:attr name="android:animation">
+            <objectAnimator android:propertyName="trimPathEnd" android:valueFrom="0" android:valueTo="1"
+                android:startOffset="0" android:duration="450" android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="groove0">
+        <aapt:attr name="android:animation">
+            <objectAnimator android:propertyName="trimPathEnd" android:valueFrom="0" android:valueTo="1"
+                android:startOffset="250" android:duration="300" android:valueType="floatType"
+                android:interpolator="@android:interpolator/linear_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="groove1">
+        <aapt:attr name="android:animation">
+            <objectAnimator android:propertyName="trimPathEnd" android:valueFrom="0" android:valueTo="1"
+                android:startOffset="280" android:duration="300" android:valueType="floatType"
+                android:interpolator="@android:interpolator/linear_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="groove2">
+        <aapt:attr name="android:animation">
+            <objectAnimator android:propertyName="trimPathEnd" android:valueFrom="0" android:valueTo="1"
+                android:startOffset="310" android:duration="300" android:valueType="floatType"
+                android:interpolator="@android:interpolator/linear_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="groove3">
+        <aapt:attr name="android:animation">
+            <objectAnimator android:propertyName="trimPathEnd" android:valueFrom="0" android:valueTo="1"
+                android:startOffset="250" android:duration="300" android:valueType="floatType"
+                android:interpolator="@android:interpolator/linear_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="groove4">
+        <aapt:attr name="android:animation">
+            <objectAnimator android:propertyName="trimPathEnd" android:valueFrom="0" android:valueTo="1"
+                android:startOffset="280" android:duration="300" android:valueType="floatType"
+                android:interpolator="@android:interpolator/linear_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="groove5">
+        <aapt:attr name="android:animation">
+            <objectAnimator android:propertyName="trimPathEnd" android:valueFrom="0" android:valueTo="1"
+                android:startOffset="310" android:duration="300" android:valueType="floatType"
+                android:interpolator="@android:interpolator/linear_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="ring">
+        <aapt:attr name="android:animation">
+            <objectAnimator android:propertyName="trimPathEnd" android:valueFrom="0" android:valueTo="1"
+                android:startOffset="350" android:duration="480" android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="arrow">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator android:propertyName="scaleX" android:valueFrom="0" android:valueTo="1" android:startOffset="800"
+                    android:duration="200" android:valueType="floatType" android:interpolator="@android:anim/overshoot_interpolator"/>
+                <objectAnimator android:propertyName="scaleY" android:valueFrom="0" android:valueTo="1" android:startOffset="800"
+                    android:duration="200" android:valueType="floatType" android:interpolator="@android:anim/overshoot_interpolator"/>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>

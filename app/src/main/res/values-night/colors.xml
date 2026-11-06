@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Фон окна до появления Compose (совпадает с фоном тёмной темы) -->
+    <color name="window_background">#FF101511</color>
+    <!-- Виджет "Огонёк" -->
+    <color name="widget_background">#FF313632</color>
+    <color name="widget_text">#FFDFE4DD</color>
+    <color name="widget_text_soft">#FFC1C9BF</color>
+    <color name="widget_flame">#FFA3D3AE</color>
+    <color name="widget_flame_off">#FF8A958E</color>
+</resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Заставка Android, вариант Б "Перезагрузка мозга" (0,8 с): готовый логотип, стрелка делает один быстрый
+     оборот, мозг в конце слегка "вздыхает". Рисунок — из docs/design/logo-animation/android/avd_tyb_splash.xml -->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector android:width="288dp" android:height="288dp" android:viewportWidth="1024" android:viewportHeight="1024">
+            <group android:pivotX="512" android:pivotY="512" android:scaleX="0.9" android:scaleY="0.9">
+            <group android:name="brain" android:pivotX="512" android:pivotY="512">
+                <path android:pathData="M482.0,315.0 A50.0,50.0 0 0 0 397.0,342.5 A54.6,54.6 0 0 0 334.8,417.5 A58.8,58.8 0 0 0 312.0,520.0 A58.8,58.8 0 0 0 334.8,622.5 A54.6,54.6 0 0 0 397.0,697.5 A50.0,50.0 0 0 0 482.0,725.0 Z" android:strokeColor="#FFFFFF" android:strokeWidth="40"
+                    android:strokeLineCap="round" android:strokeLineJoin="round"/>
+                <path android:pathData="M542.0,315.0 A50.0,50.0 0 0 1 627.0,342.5 A54.6,54.6 0 0 1 689.2,417.5 A58.8,58.8 0 0 1 712.0,520.0 A58.8,58.8 0 0 1 689.2,622.5 A54.6,54.6 0 0 1 627.0,697.5 A50.0,50.0 0 0 1 542.0,725.0 Z" android:strokeColor="#FFFFFF" android:strokeWidth="40"
+                    android:strokeLineCap="round" android:strokeLineJoin="round"/>
+                <path android:pathData="M427.0,385.0 C382.0,405.0 372.0,455.0 400.0,492.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                    android:strokeLineCap="round" android:strokeLineJoin="round"/>
+                <path android:pathData="M327.0,480.0 C367.0,505.0 377.0,555.0 352.0,592.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                    android:strokeLineCap="round" android:strokeLineJoin="round"/>
+                <path android:pathData="M434.0,622.0 C402.0,632.0 390.0,660.0 396.0,688.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                    android:strokeLineCap="round" android:strokeLineJoin="round"/>
+                <path android:pathData="M597.0,385.0 C642.0,405.0 652.0,455.0 624.0,492.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                    android:strokeLineCap="round" android:strokeLineJoin="round"/>
+                <path android:pathData="M697.0,480.0 C657.0,505.0 647.0,555.0 672.0,592.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                    android:strokeLineCap="round" android:strokeLineJoin="round"/>
+                <path android:pathData="M590.0,622.0 C622.0,632.0 634.0,660.0 628.0,688.0" android:strokeColor="#FFFFFF" android:strokeWidth="32"
+                    android:strokeLineCap="round" android:strokeLineJoin="round"/>
+            </group>
+            <group android:name="ring" android:pivotX="512" android:pivotY="512">
+                <path android:pathData="M322.7,241.7 A330,330 0 1 0 677.0,226.2" android:strokeColor="#5CF2B4" android:strokeWidth="44"
+                    android:strokeLineCap="round" android:strokeLineJoin="round"/>
+                <path android:pathData="M716.7,177.5 L619.6,193.1 L654.7,284.9" android:strokeColor="#5CF2B4" android:strokeWidth="44"
+                    android:strokeLineCap="round" android:strokeLineJoin="round"/>
+            </group>
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="ring">
+        <aapt:attr name="android:animation">
+            <objectAnimator android:propertyName="rotation" android:valueFrom="0" android:valueTo="360"
+                android:duration="600" android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="brain">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator android:propertyName="scaleX" android:valueFrom="1" android:valueTo="1.05"
+                    android:startOffset="450" android:duration="170" android:valueType="floatType"/>
+                <objectAnimator android:propertyName="scaleY" android:valueFrom="1" android:valueTo="1.05"
+                    android:startOffset="450" android:duration="170" android:valueType="floatType"/>
+                <objectAnimator android:propertyName="scaleX" android:valueFrom="1.05" android:valueTo="1"
+                    android:startOffset="620" android:duration="180" android:valueType="floatType"/>
+                <objectAnimator android:propertyName="scaleY" android:valueFrom="1.05" android:valueTo="1"
+                    android:startOffset="620" android:duration="180" android:valueType="floatType"/>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>

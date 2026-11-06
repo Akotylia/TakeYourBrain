@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TakeYourBrain" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+    </style>
+    <!-- Главный экран: заставка Android 12+ с логотипом (вариант Б, без звука). Фон всегда тёмный, как у логотипа -->
+    <style name="Theme.TakeYourBrain.Main">
+        <item name="android:windowSplashScreenBackground">@color/logo_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/avd_tyb_splash</item>
+        <item name="android:windowSplashScreenAnimationDuration">800</item>
+    </style>
+</resources>

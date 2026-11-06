@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TYB — анимация и иконки</title>
+<style>
+  :root {
+    --bg: #0F1411; --card: #1A211C; --text: #E3E9E2; --muted: #9AA79C;
+    --accent: #5CF2B4; --accent-soft: #24402F; --bar: #1F2721;
+  }
+  body.light {
+    --bg: #E6F2EA; --card: #FFFFFF; --text: #16211A; --muted: #4F5F55;
+    --accent: #2E6B47; --accent-soft: #CDEFD8; --bar: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px 16px 120px; background: var(--bg); color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    transition: background .3s, color .3s;
+  }
+  main { max-width: 760px; margin: 0 auto; display: grid; gap: 16px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 18px; margin: 0 0 12px; }
+  p { margin: 0 0 8px; color: var(--muted); }
+  .card { background: var(--card); border-radius: 24px; padding: 20px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; }
+  button {
+    font: inherit; border: 0; border-radius: 999px; padding: 10px 18px; cursor: pointer;
+    background: var(--accent-soft); color: var(--text);
+  }
+  button.primary { background: var(--accent); color: #0B1A12; font-weight: 600; }
+
+  /* ---------- Логотип ---------- */
+  .stage { display: grid; place-items: center; padding: 16px 0; }
+  #logo { width: min(320px, 80vw); height: auto; overflow: visible; }
+  #logo .bg { transform-origin: 512px 512px; transform-box: view-box; }
+  #logo .draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  #logo .head { transform-origin: 619.6px 193.1px; transform-box: view-box; opacity: 0; }
+
+  .play .bg    { animation: bgIn .45s cubic-bezier(.2,.8,.2,1) both; }
+  .play .brain { animation: draw .8s cubic-bezier(.4,0,.2,1) .2s both; }
+  .play .fold  { animation: draw .45s ease-out .75s both; }
+  .play .arc   { animation: drawRev .9s cubic-bezier(.5,0,.2,1) 1.05s both; }
+  .play .head  { animation: pop .35s cubic-bezier(.3,1.6,.5,1) 1.9s both; }
+  .play .glow  { animation: glow 1.2s ease-out 2.0s both; }
+
+  @keyframes bgIn { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: none; } }
+  @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes drawRev { from { stroke-dashoffset: -1; } to { stroke-dashoffset: 0; } }
+  @keyframes pop { from { opacity: 0; transform: scale(.2); } to { opacity: 1; transform: none; } }
+  @keyframes glow { 0% { opacity: 0; } 30% { opacity: .55; } 100% { opacity: 0; } }
+
+  /* ---------- Загрузка ---------- */
+  .loader { color: var(--accent); animation: spin 1.1s linear infinite; }
+  @keyframes spin { to { transform: rotate(-360deg); } }
+
+  /* ---------- Иконки ---------- */
+  .icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; }
+  .icon { background: var(--bg); border-radius: 16px; padding: 14px 8px; text-align: center; font-size: 13px; color: var(--muted); }
+  .icon svg { width: 36px; height: 36px; display: block; margin: 0 auto 8px; color: var(--text); }
+  .icon.on svg { color: var(--accent); }
+
+  /* ---------- Плавающая панель ---------- */
+  .bar {
+    position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
+    width: min(440px, calc(100% - 32px)); display: flex; justify-content: space-between;
+    background: var(--bar); border-radius: 999px; padding: 6px;
+    box-shadow: 0 6px 24px rgba(0,0,0,.25); transition: background .3s;
+  }
+  body.glass .bar {
+    background: color-mix(in srgb, var(--bar) 55%, transparent);
+    backdrop-filter: blur(22px) saturate(1.6); -webkit-backdrop-filter: blur(22px) saturate(1.6);
+    border: 1px solid rgba(255,255,255,.18);
+  }
+  .tab {
+    flex: 1; display: grid; justify-items: center; gap: 2px; padding: 6px 0 4px;
+    border-radius: 999px; font-size: 12px; color: var(--muted); background: none;
+  }
+  .tab svg { width: 24px; height: 24px; }
+  .tab.on { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  body.light .tab.on { color: var(--accent); }
+
+  /* пятна за стеклом (только в стеклянном стиле) */
+  .blobs { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .4s; }
+  body.glass .blobs { opacity: 1; }
+  .blobs i { position: absolute; border-radius: 50%; filter: blur(60px); }
+  .blobs i:nth-child(1) { width: 320px; height: 320px; left: -60px; bottom: 40px; background: #5CF2B4; opacity: .35; }
+  .blobs i:nth-child(2) { width: 280px; height: 280px; right: -40px; bottom: -40px; background: #6FC7D6; opacity: .35; }
+  .blobs i:nth-child(3) { width: 220px; height: 220px; right: 30%; top: 30%; background: #F5C6A5; opacity: .2; }
+</style>
+</head>
+<body>
+<div class="blobs"><i></i><i></i><i></i></div>
+
+<!-- Набор иконок: линии 2px, круглые концы, сетка 24×24 — как у логотипа -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- Загрузка: дуга почти по кругу + остриё (как в логотипе) -->
+    <symbol id="loader" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32.25 9.3A16.5 16.5 0 1 1 14.5 10.1"/><path d="M34.2 6.9 29.4 7.7 31.1 12.2"/>
+    </symbol>
+    <symbol id="i-apps" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="3.5" width="7" height="7" rx="2.2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2.2"/>
+      <rect x="3.5" y="13.5" width="7" height="7" rx="2.2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2.2"/>
+    </symbol>
+    <!-- Фокус: стрелка по кругу (как в логотипе) вокруг точки -->
+    <symbol id="i-focus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15.5 4.1A8.5 8.5 0 1 1 8 4.4"/><path d="M17.6 2.3 14.9 3.6 16.3 6.4"/>
+      <circle cx="12" cy="12.5" r="2.4" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-stats" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+      <path d="M5 20v-6"/><path d="M10 20V8"/><path d="M15 20v-9"/><path d="M20 20V4"/>
+    </symbol>
+    <!-- Настройки: ползунки вместо шестерёнки — спокойнее -->
+    <symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <path d="M4 7h9"/><path d="M19 7h1"/><circle cx="16" cy="7" r="2.5"/>
+      <path d="M4 17h1"/><path d="M11 17h9"/><circle cx="8" cy="17" r="2.5"/>
+    </symbol>
+    <symbol id="i-tasks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5"/><path d="M8 12.2l2.8 2.8L16.5 9"/>
+    </symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 3.5h10M7 20.5h10"/><path d="M8 3.5c0 4 8 4.5 8 8.5s-8 4.5-8 8.5"/><path d="M16 3.5c0 4-8 4.5-8 8.5s8 4.5 8 8.5"/>
+      <path d="M10 18.2h4" stroke-width="2.6"/>
+    </symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21c-4 0-6.5-2.7-6.5-6.2 0-4.3 4-6 4.5-11 3 2 4.5 4.5 4.3 7.3 1-.6 1.7-1.6 2-2.8 1.7 1.8 2.2 4.3 2.2 6.5 0 3.5-2.5 6.2-6.5 6.2Z"/>
+      <path d="M12 21c-1.6 0-2.7-1.1-2.7-2.6 0-1.8 1.6-2.6 2.7-4.4 1.1 1.8 2.7 2.6 2.7 4.4 0 1.5-1.1 2.6-2.7 2.6Z"/>
+    </symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4.5" y="10.5" width="15" height="10" rx="3.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><path d="M12 14.5v2"/>
+    </symbol>
+    <symbol id="i-pass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 8.5a2 2 0 0 0 0 7v2a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-2a2 2 0 0 1 0-7v-2a2 2 0 0 0-2-2h-13a2 2 0 0 0-2 2Z"/>
+      <path d="M14 6.5v11" stroke-dasharray="1.5 2.5"/>
+    </symbol>
+    <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M11 5.5a2 2 0 0 0-3.6-.6 2.2 2.2 0 0 0-2.5 3 2.4 2.4 0 0 0-.9 4.1 2.4 2.4 0 0 0 .9 4.1 2.2 2.2 0 0 0 2.5 3 2 2 0 0 0 3.6-.6Z"/>
+      <path d="M13 5.5a2 2 0 0 1 3.6-.6 2.2 2.2 0 0 1 2.5 3 2.4 2.4 0 0 1 .9 4.1 2.4 2.4 0 0 1-.9 4.1 2.2 2.2 0 0 1-2.5 3 2 2 0 0 1-3.6-.6Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<main>
+  <div>
+    <h1>Take Your Brain</h1>
+    <p>Черновик анимации логотипа и набора иконок. Нажми «Ещё раз со звуком».</p>
+  </div>
+
+  <section class="card">
+    <h2>Анимация логотипа</h2>
+    <div class="stage">
+      <svg id="logo" viewBox="0 0 1024 1024" class="play">
+        <defs>
+          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#33363D"/><stop offset="1" stop-color="#141518"/>
+          </linearGradient>
+          <radialGradient id="halo"><stop offset=".55" stop-color="#5CF2B4" stop-opacity=".9"/><stop offset="1" stop-color="#5CF2B4" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect class="bg" width="1024" height="1024" rx="230" fill="url(#bg)"/>
+        <circle class="glow" cx="512" cy="520" r="420" fill="url(#halo)" opacity="0"/>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <!-- стрелка по кругу: рисуется от хвоста к острию -->
+          <path class="draw arc" pathLength="1" d="M677.0,226.2 A330,330 0 1 1 322.7,241.7" stroke="#5CF2B4" stroke-width="44"/>
+          <path class="head" d="M716.7,177.5 L619.6,193.1 L654.7,284.9" stroke="#5CF2B4" stroke-width="44"/>
+          <!-- две половинки мозга -->
+          <path class="draw brain" pathLength="1" d="M482.0,315.0 A50.0,50.0 0 0 0 397.0,342.5 A54.6,54.6 0 0 0 334.8,417.5 A58.8,58.8 0 0 0 312.0,520.0 A58.8,58.8 0 0 0 334.8,622.5 A54.6,54.6 0 0 0 397.0,697.5 A50.0,50.0 0 0 0 482.0,725.0 Z" stroke="#fff" stroke-width="40"/>
+          <path class="draw brain" pathLength="1" d="M542.0,315.0 A50.0,50.0 0 0 1 627.0,342.5 A54.6,54.6 0 0 1 689.2,417.5 A58.8,58.8 0 0 1 712.0,520.0 A58.8,58.8 0 0 1 689.2,622.5 A54.6,54.6 0 0 1 627.0,697.5 A50.0,50.0 0 0 1 542.0,725.0 Z" stroke="#fff" stroke-width="40"/>
+          <!-- извилины -->
+          <path class="draw fold" pathLength="1" d="M427.0,385.0 C382.0,405.0 372.0,455.0 400.0,492.0" stroke="#fff" stroke-width="32"/>
+          <path class="draw fold" pathLength="1" d="M327.0,480.0 C367.0,505.0 377.0,555.0 352.0,592.0" stroke="#fff" stroke-width="32"/>
+          <path class="draw fold" pathLength="1" d="M434.0,622.0 C402.0,632.0 390.0,660.0 396.0,688.0" stroke="#fff" stroke-width="32"/>
+          <path class="draw fold" pathLength="1" d="M597.0,385.0 C642.0,405.0 652.0,455.0 624.0,492.0" stroke="#fff" stroke-width="32"/>
+          <path class="draw fold" pathLength="1" d="M697.0,480.0 C657.0,505.0 647.0,555.0 672.0,592.0" stroke="#fff" stroke-width="32"/>
+          <path class="draw fold" pathLength="1" d="M590.0,622.0 C622.0,632.0 634.0,660.0 628.0,688.0" stroke="#fff" stroke-width="32"/>
+        </g>
+      </svg>
+    </div>
+    <div class="row">
+      <button class="primary" id="replaySound">▶ Ещё раз со звуком</button>
+      <button id="replay">Ещё раз без звука</button>
+    </div>
+    <p style="margin-top:12px">Порядок: появляется фон → рисуются половинки мозга → извилины → стрелка обегает круг («вжух») → остриё стрелки выскакивает («дзынь») → мягкое свечение.</p>
+  </section>
+
+  <section class="card">
+    <h2>Загрузка: наша стрелка вместо кружка</h2>
+    <p>Дуга почти замкнута, остриё впереди, крутится в ту же сторону, куда смотрит стрелка.</p>
+    <div class="row" style="align-items:center;gap:28px;justify-content:center;padding:8px 0">
+      <svg class="loader" viewBox="0 0 48 48" width="56" height="56"><use href="#loader"/></svg>
+      <svg class="loader" viewBox="0 0 48 48" width="32" height="32"><use href="#loader"/></svg>
+      <svg class="loader" viewBox="0 0 48 48" width="20" height="20"><use href="#loader"/></svg>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Иконки в стиле логотипа</h2>
+    <p>Линии одной толщины, круглые концы, скругления. Зелёным — как выглядит выбранная.</p>
+    <div class="icons">
+      <div class="icon on"><svg><use href="#i-apps"/></svg>Приложения</div>
+      <div class="icon"><svg><use href="#i-focus"/></svg>Фокус</div>
+      <div class="icon"><svg><use href="#i-stats"/></svg>Статистика</div>
+      <div class="icon"><svg><use href="#i-settings"/></svg>Настройки</div>
+      <div class="icon"><svg><use href="#i-tasks"/></svg>Дела</div>
+      <div class="icon"><svg><use href="#i-bank"/></svg>Банк времени</div>
+      <div class="icon on"><svg><use href="#i-flame"/></svg>Серия</div>
+      <div class="icon"><svg><use href="#i-lock"/></svg>Блокировка</div>
+      <div class="icon"><svg><use href="#i-pass"/></svg>Пропуск</div>
+      <div class="icon"><svg><use href="#i-brain"/></svg>Мозг (мини-логотип)</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Посмотреть панель и тему</h2>
+    <p>Внизу — плавающая панель. Переключай тему и стекло. Нажимай на вкладки.</p>
+    <div class="row">
+      <button id="themeBtn">Светлая тема</button>
+      <button id="glassBtn">Включить стекло</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Чтобы под стеклом было что размывать</h2>
+    <p>Прокрути страницу: в стеклянном стиле панель размывает то, что под ней, и цветные пятна на фоне.</p>
+    <p>Текст для прокрутки. Текст для прокрутки. Текст для прокрутки. Текст для прокрутки.</p>
+    <div style="height:280px;border-radius:16px;background:linear-gradient(135deg,#5CF2B4,#2F7A86 60%,#F5C6A5)"></div>
+  </section>
+</main>
+
+<nav class="bar" id="bar">
+  <button class="tab on"><svg><use href="#i-apps"/></svg>Приложения</button>
+  <button class="tab"><svg><use href="#i-focus"/></svg>Фокус</button>
+  <button class="tab"><svg><use href="#i-stats"/></svg>Статистика</button>
+  <button class="tab"><svg><use href="#i-settings"/></svg>Настройки</button>
+</nav>
+
+<script>
+  const logo = document.getElementById('logo');
+  let ctx;
+
+  // Перезапуск анимации: снимаем класс, даём браузеру "забыть" её, ставим снова
+  function replay(withSound) {
+    logo.classList.remove('play');
+    void logo.getBoundingClientRect();
+    logo.classList.add('play');
+    if (withSound) playSound();
+  }
+
+  // Звук без файлов: "вжух" из шума + мягкий "дзынь"
+  function playSound() {
+    try {
+      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+      const t = ctx.currentTime;
+
+      // Вжух: шум через фильтр, частота растёт вместе со стрелкой (1.05 → 1.95 с)
+      const len = ctx.sampleRate * 1.0;
+      const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+      const data = buf.getChannelData(0);
+      for (let i = 0; i < len; i++) data[i] = Math.random() * 2 - 1;
+      const noise = ctx.createBufferSource(); noise.buffer = buf;
+      const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.Q.value = 1.2;
+      bp.frequency.setValueAtTime(350, t + 1.05);
+      bp.frequency.exponentialRampToValueAtTime(2600, t + 1.9);
+      const g1 = ctx.createGain();
+      g1.gain.setValueAtTime(0.0001, t + 1.05);
+      g1.gain.exponentialRampToValueAtTime(0.35, t + 1.6);
+      g1.gain.exponentialRampToValueAtTime(0.0001, t + 2.0);
+      noise.connect(bp).connect(g1).connect(ctx.destination);
+      noise.start(t + 1.05); noise.stop(t + 2.05);
+
+      // Дзынь: два тона, когда появляется остриё стрелки
+      [[880, 0.18], [1320, 0.09]].forEach(([f, vol]) => {
+        const o = ctx.createOscillator(); o.type = 'sine'; o.frequency.value = f;
+        const g = ctx.createGain();
+        g.gain.setValueAtTime(0.0001, t + 1.92);
+        g.gain.exponentialRampToValueAtTime(vol, t + 1.95);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + 3.0);
+        o.connect(g).connect(ctx.destination);
+        o.start(t + 1.92); o.stop(t + 3.05);
+      });
+    } catch (e) { /* звук недоступен — просто анимация */ }
+  }
+
+  document.getElementById('replaySound').onclick = () => replay(true);
+  document.getElementById('replay').onclick = () => replay(false);
+
+  const themeBtn = document.getElementById('themeBtn');
+  themeBtn.onclick = () => {
+    const light = document.body.classList.toggle('light');
+    themeBtn.textContent = light ? 'Тёмная тема' : 'Светлая тема';
+  };
+  const glassBtn = document.getElementById('glassBtn');
+  glassBtn.onclick = () => {
+    const on = document.body.classList.toggle('glass');
+    glassBtn.textContent = on ? 'Выключить стекло' : 'Включить стекло';
+  };
+  document.querySelectorAll('.tab').forEach(tab => tab.onclick = () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+    tab.classList.add('on');
+  });
+</script>
+</body>
+</html>
