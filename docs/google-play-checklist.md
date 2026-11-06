@@ -6,7 +6,8 @@
 ## 1. Перед первой загрузкой
 
 - [x] Вписать email для связи (takeyourbrain067@gmail.com) в `strings.xml` и `docs/privacy-policy.html`.
-- [ ] Выложить `docs/privacy-policy.html` на общедоступную страницу (GitHub Pages или Google Sites) и сохранить ссылку. Без неё Play не примет приложение.
+- [x] Политика выложена: https://akotylia.github.io/TakeYourBrain/privacy-policy.html
+- [ ] Play App Signing: выбрать загрузку своего ключа из `signing/` (не ключ Google), чтобы версия из Play ставилась поверх APK с GitHub.
 - [ ] Сохранить копию папки `signing/` в надёжное место (не в git, не в открытый доступ). Это ключ загрузки и его пароль.
 - [x] Постоянное уведомление убрано (2026-11-06), декларация служб переднего плана не нужна.
 - [ ] Записать видео (раздел 5).

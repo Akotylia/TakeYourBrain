@@ -49,6 +49,10 @@
     <string name="permission_open_settings">Open settings</string>
     <string name="permission_allow">Allow</string>
     <string name="permission_app_info">App info</string>
+    <string name="restricted_title">First, lift the Android protection</string>
+    <string name="restricted_text">You installed the app from a file, not from a store. Android protects such apps, so steps 1 and 2 will not turn on at first, and the phone will say \"App was denied access\" or \"Restricted setting\". This is normal and is done once.</string>
+    <string name="restricted_steps">1. Press \"Open settings\" in step 1 and try to turn it on. When Android refuses, close the window.\n2. Press the button below. In App info, tap ⋮ in the top right corner → \"Allow restricted settings\" and confirm.\n3. Come back here and turn on steps 1 and 2.</string>
+    <string name="restricted_open_app_info">Open App info</string>
 
     <string name="perm_usage_title">Usage data access</string>
     <string name="perm_usage_desc">Lets the app count how much time you spend in each app. Find Take Your Brain in the list and turn the switch on.</string>

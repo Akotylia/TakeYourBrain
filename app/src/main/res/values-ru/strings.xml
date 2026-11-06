@@ -44,6 +44,10 @@
     <string name="permission_open_settings">Открыть настройки</string>
     <string name="permission_allow">Разрешить</string>
     <string name="permission_app_info">Сведения о приложении</string>
+    <string name="restricted_title">Сначала снимите защиту Android</string>
+    <string name="restricted_text">Вы установили приложение из файла, а не из магазина. Android защищает такие приложения, поэтому шаги 1 и 2 сначала не включатся, а телефон напишет «Приложению запрещён доступ» или «Ограниченная настройка». Это нормально и делается один раз.</string>
+    <string name="restricted_steps">1. Нажмите «Открыть настройки» в шаге 1 и попробуйте включить. Когда Android откажет, закройте окно.\n2. Нажмите кнопку ниже. В сведениях о приложении нажмите ⋮ в правом верхнем углу → «Разрешить ограниченные настройки» и подтвердите.\n3. Вернитесь сюда и включите шаги 1 и 2.</string>
+    <string name="restricted_open_app_info">Открыть сведения о приложении</string>
 
     <string name="perm_usage_title">Доступ к статистике использования</string>
     <string name="perm_usage_desc">Нужен, чтобы считать, сколько времени вы проводите в каждом приложении. Найдите в списке Take Your Brain и включите переключатель.</string>

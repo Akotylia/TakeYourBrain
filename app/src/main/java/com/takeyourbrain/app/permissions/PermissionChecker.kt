@@ -4,6 +4,7 @@ import android.Manifest
 import android.app.AppOpsManager
 import android.content.ComponentName
 import android.content.Context
+import android.content.pm.PackageInstaller
 import android.content.pm.PackageManager
 import android.os.PowerManager
 import android.os.Process
@@ -19,6 +20,8 @@ data class PermissionsState(
     val notifications: Boolean = false,
     val batteryUnrestricted: Boolean = false,
     val exactAlarms: Boolean = false,
+    /** Установлено из файла, и Android пока не даёт включить статистику и службу ("ограниченные настройки"). */
+    val restrictedSettings: Boolean = false,
 ) {
     /** Без этих двух приложение не может работать. */
     val allRequiredGranted: Boolean get() = usageAccess && accessibility
@@ -39,7 +42,23 @@ class PermissionChecker(private val context: Context) {
         batteryUnrestricted = context.getSystemService(PowerManager::class.java)
             .isIgnoringBatteryOptimizations(context.packageName),
         exactAlarms = Alarms.canScheduleExact(context),
+        restrictedSettings = areSettingsRestricted(),
     )
+
+    /**
+     * Установлено из файла (не из магазина) — тогда Android 13+ включает "ограниченные настройки".
+     * Снять их — Сведения о приложении → ⋮ → "Разрешить ограниченные настройки". Спросить у системы,
+     * сняты ли они, обычному приложению нельзя (Android 13 роняет приложение), поэтому смотрим источник.
+     */
+    private fun areSettingsRestricted(): Boolean {
+        val source = try {
+            context.packageManager.getInstallSourceInfo(context.packageName).packageSource
+        } catch (_: PackageManager.NameNotFoundException) {
+            return false
+        }
+        return source == PackageInstaller.PACKAGE_SOURCE_DOWNLOADED_FILE ||
+            source == PackageInstaller.PACKAGE_SOURCE_LOCAL_FILE
+    }
 
     /** Доступ к статистике использования (Настройки → Доступ к данным об использовании). */
     fun hasUsageAccess(): Boolean {

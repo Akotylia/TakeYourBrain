@@ -17,6 +17,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -126,6 +127,11 @@ fun PermissionsScreen(
                 style = MaterialTheme.typography.titleMedium
             )
 
+            // Установлено из файла: сначала объясняем, как снять защиту Android, иначе шаги 1 и 2 не включатся
+            if (state.restrictedSettings && !state.allRequiredGranted) {
+                RestrictedSettingsCard(onOpenAppInfo = { SystemSettings.openAppDetails(context) })
+            }
+
             PermissionStep(
                 number = 1,
                 title = R.string.perm_usage_title,
@@ -199,6 +205,33 @@ fun PermissionsScreen(
             ) {
                 Text(stringResource(R.string.permissions_continue))
             }
+        }
+    }
+}
+
+/** "Вы установили приложение не из магазина": по шагам, как разрешить ограниченные настройки. */
+@Composable
+private fun RestrictedSettingsCard(onOpenAppInfo: () -> Unit) {
+    Card(
+        shape = CardShape,
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+        )
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(painterResource(R.drawable.ic_shield), contentDescription = null)
+                Spacer(Modifier.width(12.dp))
+                Text(stringResource(R.string.restricted_title), style = MaterialTheme.typography.titleMedium)
+            }
+            Text(stringResource(R.string.restricted_text), style = MaterialTheme.typography.bodyMedium)
+            Text(stringResource(R.string.restricted_steps), style = MaterialTheme.typography.bodyMedium)
+            Button(onClick = onOpenAppInfo) { Text(stringResource(R.string.restricted_open_app_info)) }
         }
     }
 }
